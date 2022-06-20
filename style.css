@@ -1,1 +1,47 @@
-object {}
+body {
+    background: linear-gradient(0deg, #abc, #def);
+    height: 100vh;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    color: #bdbdbd;
+    font-weight: 300;
+}
+
+.header {
+    box-shadow: 0 5px 5px #323;
+}
+
+.toolbar {
+    position: sticky;
+    height: 3em;
+    background-color: #989;
+    border: 2px solid #767;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar a {
+    background-color: #123;
+    text-decoration: none;
+    color: #aaa;
+    height: 1.2em;
+    flex: 0 0 5em;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: 0 0 0.5em #111;
+}
+
+.toolbar a:active {
+    background-color: #b70;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+#mainArea {
+    padding: 2em;
+}
