@@ -4,6 +4,8 @@
     justify-content: center;
     align-items: center;
 }
- input {
-     margin-bottom: 1rem;
- }
+
+input {
+    margin-bottom: 1rem;
+    padding: 0;
+}
