@@ -1,12 +1,14 @@
 'use strict';
 
 class Page {
-    constructor(name, htmlName, jsName) {
+    constructor(name, htmlName, jsName, cssName) {
         this.name = name;
         this.htmlName = htmlName;
         this.jsName = jsName;
+        this.cssName = cssName;
 
-        this.jsName = jsName ? jsName : htmlName.substring(0, htmlName.lastIndexOf(".")) + "js";
+        this.jsName = jsName ? jsName : htmlName.substring(0, htmlName.lastIndexOf(".")) + ".js";
+        this.cssName = cssName ? cssName : htmlName.substring(0, htmlName.lastIndexOf(".")) + ".css";
     }
 }
 
@@ -30,7 +32,7 @@ class Router {
                 }
             }
         } else {
-            Router.goToPage(Router.pages[0])
+            Router.goToPage(Router.pages[0]);
         }
     }
 
@@ -40,10 +42,15 @@ class Router {
             const txt = await response.text();
             Router.rootElem.innerHTML = txt;
 
-            const script = document.createElement(script);
+            const script = document.createElement("script");
             script.setAttribute("src", page.jsName);
             script.setAttribute('type', "text/javascript");
             Router.rootElem.appendChild(script);
+
+            const style = document.createElement("link");
+            style.setAttribute("rel", "stylesheet");
+            style.setAttribute("href", page.cssName);
+            Router.rootElem.appendChild(style);
         } catch (err) {
             console.error(err);
         }
