@@ -2,10 +2,9 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
+    margin: 3rem;
 }
 
 input {
     margin-bottom: 1rem;
-    padding: 0;
 }
