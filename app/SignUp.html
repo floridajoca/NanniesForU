@@ -2,19 +2,19 @@
     <form action="" method="post" id="sign-up-form">
         <h3>Register</h3>
         <label for="parent">Register as a parent</label>
-        <input type="radio" name="parent" id="parent" value="Parent">
+        <input type="radio" name="user type" id="parent" value="Parent">
         <label for="nanny">Register as a nanny</label>
-        <input type="radio" name="nanny" id="nanny" value="Nanny">
-        <input type="text" id="fname" placeholder="First Name" aria-placeholder="First Name">
-        <input type="text" id="lname" placeholder="Last Name" aria-placeholder="Last Name">
-        <input type="email" id="email" placeholder="email" aria-placeholder="email">
+        <input type="radio" name="user type" id="nanny" value="Nanny">
+        <input type="text" id="fname" placeholder="First Name" aria-placeholder="First Name" required>
+        <input type="text" id="lname" placeholder="Last Name" aria-placeholder="Last Name" required>
+        <input type="email" id="email" placeholder="Email" aria-placeholder="email" required>
         <input type="tel" name="phone number" id="phone number" aria-placeholder="phone-number"
-               placeholder="Phone number">
-        <input type="password" name="password" id="password" placeholder="Password" aria-placeholder="Password">
-        <input type="password" name="confirmpassword" id="confirm password" placeholder="Confirm Password"
-               aria-placeholder="Confirm Password">
+            placeholder="Phone number" required>
+        <input type="password" name="password" id="password" placeholder="Password" aria-placeholder="Password" required>
+        <input type="password" name="confirm password" id="confirm password" placeholder="Confirm Password"
+            aria-placeholder="Confirm Password" required>
         <input type="text" placeholder="Address Line" id="address" aria-placeholder="address">
-        <input type="text" placeholder="Zip Code" id="zip-code" aria-placeholder="Zip Code">
+        <input type="text" placeholder="Zip Code" id="zip-code" aria-placeholder="Zip Code" required>
         <input type="text" placeholder="City" id="city" aria-placeholder="City">
         <input type="text" placeholder="State" id="state" aria-placeholder="State">
         <input type="text" placeholder="Country" id="country" aria-placeholder="country">
