@@ -9,4 +9,5 @@ Router.init("main-area", [
     new Page("#login", 'app/Login.html'),
     new Page("#parentlist", 'app/ParentProfileList.html'),
     new Page("#usersettings", 'app/UserSettings.html'),
+    new Page("#parentjobpost", 'app/ParentJobPost.html'),
 ]);
