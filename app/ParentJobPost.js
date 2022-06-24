@@ -24,16 +24,6 @@ getDocs(colRef)
 // })
 
 
-
-
-parentNameOutput.innerHTML = "Jess"
-locationOutput.innerHTML='Ontario';
-scheduleOutput.innerHTML='MTWTFSS';
-payRateOutput.innerHTML='35$ per hour';
-startDateOutput.innerHTML='22-June-2022';
-endDateOutput.innerHTML='31-Dec-2022';
-descriptionOutput.innerHTML='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam deleniti cupiditate vero! Natus consequatur magnam ex autem illo neque quam!';
-
 let currentIndex = 0;
 
 next.addEventListener('click', () => {
@@ -45,13 +35,8 @@ next.addEventListener('click', () => {
   else{
       currentIndex = 0;
   }
-  parentNameOutput.innerHTML=event_array[currentIndex].parent_name;
-  locationOutput.innerHTML=event_array[currentIndex].location.latitude + ' "N ' +event_array[currentIndex].location.longitude+ ' "W';
-  scheduleOutput.innerHTML=event_array[currentIndex].schedule;
-  payRateOutput.innerHTML=event_array[currentIndex].pay_rate + ' $ per hour';
-  startDateOutput.innerHTML=event_array[currentIndex].start_date;
-  endDateOutput.innerHTML=event_array[currentIndex].end_date;
-  descriptionOutput.innerHTML=event_array[currentIndex].description;
+  fetch_data();
+  
 })
 
 prev.addEventListener('click', () => {
@@ -62,11 +47,41 @@ prev.addEventListener('click', () => {
   else{
        currentIndex = event_array.length-1;
    }
-   parentNameOutput.innerHTML=event_array[currentIndex].parent_name;
-   locationOutput.innerHTML=event_array[currentIndex].location.latitude + ' "N ' +event_array[currentIndex].location.longitude+ ' "W';
-   scheduleOutput.innerHTML=event_array[currentIndex].schedule;
-   payRateOutput.innerHTML=event_array[currentIndex].pay_rate + ' per hour';
-   startDateOutput.innerHTML=event_array[currentIndex].start_date;
-   endDateOutput.innerHTML=event_array[currentIndex].end_date;
-   descriptionOutput.innerHTML=event_array[currentIndex].description;
+   fetch_data();
 })
+
+
+function fetch_data() {
+  reset_color();
+  parentNameOutput.innerHTML=event_array[currentIndex].parent_name;
+  locationOutput.innerHTML=event_array[currentIndex].location.latitude + ' "N ' +event_array[currentIndex].location.longitude+ ' "W';
+  payRateOutput.innerHTML=event_array[currentIndex].pay_rate + ' $ per hour';
+  startDateOutput.innerHTML=event_array[currentIndex].start_date;
+  endDateOutput.innerHTML=event_array[currentIndex].end_date;
+  descriptionOutput.innerHTML=event_array[currentIndex].description;
+   //scheduleOutput.innerHTML=event_array[currentIndex].schedule;
+  let calendar_days= event_array[currentIndex].schedule;
+  console.log(calendar_days);
+  if(calendar_days!=null)
+  {
+    for(let day of calendar_days)
+    {
+      console.log(day);
+      let day_id= document.getElementById(""+day.toLowerCase()+"");
+      console.log(day_id);
+      day_id.style.backgroundColor = "rgba(44, 171, 128, 1)";
+      day_id.style.color = "rgba(255, 255, 255, 1)";
+    }
+  }
+
+}
+
+function reset_color(){
+
+var ul = document.getElementById("scheduleOutput");
+var listItems = ul.getElementsByTagName("li");
+for(let li of  listItems){
+  li.style.backgroundColor = "rgba(224, 224, 224, 1)";
+  li.style.color = "rgba(0, 0, 0, 1)";
+}
+}
