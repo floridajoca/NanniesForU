@@ -5,6 +5,10 @@
 .job-details-main{
     padding: 1rem;    
 }
+.job-details-main img{
+    max-width: 100%;
+    height: auto;
+}
 
 .job-details-main h2{
     text-align: center;
@@ -20,8 +24,12 @@
     align-items: center;
 }
 
-.job-post-details * *{
-    flex: 0 0 50%;
+.job-post-details *:nth-child(1){
+    flex: 0 0 20%;
+}
+
+.job-post-details *:nth-child(2){
+    flex: 1 0 50%;
 }
 
 .job-details-buttons button{
@@ -42,6 +50,26 @@
     border: none;
     background-color: white;
 }
+
+ul.schedule-display-list {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+}
+
+.schedule-display-list li{
+    display: inline-block;
+    margin: 0.25rem;
+    padding:0.5rem;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(224, 224, 224, 1);
+    border-radius: 50%;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
 
 /* ______________END MAIN______________ */
 
@@ -80,15 +108,15 @@
     flex: 1 0 100%;
 }
 
-.job-post-details *{
+/* .job-post-details * *{
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-}
+} */
 
-.job-post-details * *{
+/* .job-post-details * *{
     flex: 1 0 30%;
-}
+} */
 /*..........END MAIN.......... */
 
 
