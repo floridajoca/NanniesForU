@@ -1,9 +1,9 @@
 'use strict';
-import {collection, addDoc} from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
-import {db} from "../firebase.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
+import { db } from "../firebase.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
 
-let firstName;
-let lastName;
+let fullName;
 let email;
 let phoneNumber;
 let password;
@@ -16,8 +16,7 @@ let country;
 let userType;
 
 function validateInput() {
-    firstName = document.getElementById("fname").value;
-    lastName = document.getElementById("lname").value;
+    fullName = document.getElementById("fname").value;
     email = document.getElementById("email").value;
     phoneNumber = document.getElementById("phone number").value;
     password = document.getElementById("password").value;
@@ -28,31 +27,17 @@ function validateInput() {
     state = document.getElementById("state").value;
     country = document.getElementById("country").value;
     userType = document.querySelector('input[name="user type"]:checked').value;
-
-    //  if (!firstName ) {
-    //      alert("Firstname is required.");
-    //  } else if (firstName === " ") {
-    //      alert("Firstname should not be empty");
-    // } else if (!lastName ) {
-    //      alert("Lastname is required.");
-    //  } else if (email === " ") {
-    //      alert("Lastname should not be empty");
-    //  } else if (!lastName ) {
-    //      alert("Lastname is required.");
-    //  } else if (lastName === " ") {
-    //      alert("Lastname should not be empty");
-    //  }
 }
 
 function init() {
     const signup = document.getElementById("register");
+
     signup.addEventListener("click", async (e) => {
         e.preventDefault();
         validateInput();
         try {
             const docRef = await addDoc(collection(db, "user"), {
-                first_name: firstName,
-                last_name: lastName,
+                full_name: fullName,
                 contact: phoneNumber,
                 email: email,
                 password,
@@ -62,6 +47,14 @@ function init() {
                 state,
                 country,
                 user_type: userType,
+            });
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth, email, password).then((userCredentials) => {
+                const user = userCredentials.user;
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
             });
             console.log("Document written with ID: ", docRef.id);
         } catch (e) {
