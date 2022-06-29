@@ -16,7 +16,7 @@ class Router {
     static init(mainAreaId, pages) {
         Router.pages = pages;
         Router.rootElem = document.getElementById(mainAreaId);
-        window.addEventListener('hashchange', function (e) {
+        window.addEventListener('hashchange', function(e) {
             Router.handleHashChange();
         });
         Router.handleHashChange();

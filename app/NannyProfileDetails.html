@@ -27,7 +27,22 @@
                         <td id="nannyRate"></td>
                     </tr>
                 </table>
+                <div class="avail-section">
+                    <p>When:</p>
+                    <ul id="scheduleOutput" class="schedule-display">
+                        <li id="sunday">S</li>
+                        <li id="monday">M</li>
+                        <li id="tuesday">T</li>
+                        <li id="wednesday">W</li>
+                        <li id="thursday">T</li>
+                        <li id="friday">F</li>
+                        <li id="saturday">S</li>
+                    </ul>
+                </div>
+
             </div>
+
+
         </div>
         <div class="description">
             <p class="head-p">Description</p>
@@ -55,24 +70,29 @@
         <form action="#" class="form-calculation">
             <div class="duration">
                 <label for="">Duration</label>
-                <input type="text">
+                <input id="duration" type="text">
             </div>
             <div>
                 <label for="">Pay Rate</label>
-                <input type="text">
+
+                <input id="payRate" type="text">
+                <!-- <p id="payRate" style="display:inline-block;"> </p> -->
             </div>
             <div>
                 <label for="">GST Tax 5%</label>
-                <input type="text">
+                <input id="tax_5" type="text" disabled>
+
             </div>
             <div>
                 <label for="">GST Tax 7%</label>
-                <input type="text">
+                <input id="tax_7" type="text" disabled>
+
             </div>
-            <button class="calculate" type="submit">Calculate</button>
+            <button id="calculate" class="calculate" type="submit">Calculate</button>
             <div>
                 <label for="">Total</label>
-                <input type="text">
+                <input id="total" type="text">
+
             </div>
         </form>
     </div>
