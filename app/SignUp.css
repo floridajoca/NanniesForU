@@ -63,6 +63,12 @@ hr {
     border-top: 2px solid black;
 }
 
+#error-output {
+    text-align: center;
+    font-style:italic;
+    color: red;
+}
+
 @media screen and (min-width: 700px) {
     #sign-up-form {
         display: grid;
