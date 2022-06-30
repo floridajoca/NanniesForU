@@ -7,4 +7,85 @@
 
 input {
     margin-bottom: 1rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: rgba(118, 118, 118, .2);
+    border: none;
+}
+
+
+::placeholder {
+    color: rgba(0, 0, 0, .5);
+}
+
+h2 {
+    text-align: center;
+    color: #104B9E;
+}
+
+.radio-btn {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.radio-btn input {
+    order: 1;
+    accent-color: #FF435B;
+}
+
+.radio-btn label {
+    order: 2;
+}
+
+
+.login-text {
+    text-align: center;
+}
+
+.login-here-text {
+    color: #104B9E;
+}
+
+#register {
+    border-radius: 2rem;
+    padding: .5rem;
+    color: white;
+    background-color: #FF435B;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+
+}
+
+hr {
+    border-top: 2px solid black;
+}
+
+#error-output {
+    text-align: center;
+    font-style:italic;
+    color: red;
+}
+
+@media screen and (min-width: 700px) {
+    #sign-up-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+
+    #register {
+        grid-column: 1 / -1;
+        justify-content: center;
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+
+    .radio-btn:nth-child(1) {
+        justify-content: end;
+        padding-right: 1rem;
+    }
 }
