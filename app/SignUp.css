@@ -60,7 +60,9 @@ h2 {
 }
 
 hr {
-    border-top: 2px solid black;
+    border-top: 1px solid black;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
 #error-output {
@@ -74,6 +76,9 @@ hr {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 700px;
     }
 
 
