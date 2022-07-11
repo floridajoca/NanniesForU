@@ -6,7 +6,6 @@ class Page {
         this.htmlName = htmlName;
         this.jsName = jsName;
         this.cssName = cssName;
-
         this.jsName = jsName ? jsName : htmlName.substring(0, htmlName.lastIndexOf(".")) + ".js";
         this.cssName = cssName ? cssName : htmlName.substring(0, htmlName.lastIndexOf(".")) + ".css";
     }
