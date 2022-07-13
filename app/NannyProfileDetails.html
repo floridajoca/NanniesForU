@@ -27,11 +27,26 @@
                         <td id="nannyRate"></td>
                     </tr>
                 </table>
+                <div class="avail-section">
+                    <p>When:</p>
+                    <ul id="scheduleOutput" class="schedule-display">
+                        <li id="sunday">S</li>
+                        <li id="monday">M</li>
+                        <li id="tuesday">T</li>
+                        <li id="wednesday">W</li>
+                        <li id="thursday">T</li>
+                        <li id="friday">F</li>
+                        <li id="saturday">S</li>
+                    </ul>
+                </div>
+
             </div>
+
+
         </div>
         <div class="description">
             <p class="head-p">Description</p>
-            <p class="description-para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est quos ullam labore incidunt a soluta voluptas porro. Atque labore distinctio quia unde maxime dolorum magnam fuga quibusdam, autem dolor debitis.</p>
+            <p id="nannyDescription" class="description-para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est quos ullam labore incidunt a soluta voluptas porro. Atque labore distinctio quia unde maxime dolorum magnam fuga quibusdam, autem dolor debitis.</p>
         </div>
         <div class="buttons">
             <button class="button">
@@ -55,24 +70,29 @@
         <form action="#" class="form-calculation">
             <div class="duration">
                 <label for="">Duration</label>
-                <input type="text">
+                <input id="duration" type="text">
             </div>
             <div>
                 <label for="">Pay Rate</label>
-                <input type="text">
+
+                <input id="payRate" type="text">
+                <!-- <p id="payRate" style="display:inline-block;"> </p> -->
             </div>
-            <div>
+            <!-- <div>
                 <label for="">GST Tax 5%</label>
-                <input type="text">
+                <input id="tax_5" type="text" disabled>
+
             </div>
             <div>
                 <label for="">GST Tax 7%</label>
-                <input type="text">
-            </div>
-            <button class="calculate" type="submit">Calculate</button>
+                <input id="tax_7" type="text" disabled>
+
+            </div> -->
+            <button id="calculate" class="calculate" type="submit">Calculate</button>
             <div>
                 <label for="">Total</label>
-                <input type="text">
+                <input id="total" type="text">
+
             </div>
         </form>
     </div>
@@ -112,7 +132,8 @@
         </div>
     </div>
     <div class="map">
-        <iframe class="iframe-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.7233879192127!2d-123.1107382843485!3d49.22477278279311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486746f412563f7%3A0x36606d221509fdfe!2sLangara%20College!5e0!3m2!1sen!2sca!4v1655774330484!5m2!1sen!2sca"
+        <iframe id="map" class="iframe-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.7233879192127!2d-123.1107382843485!3d49.22477278279311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486746f412563f7%3A0x36606d221509fdfe!2sLangara%20College!5e0!3m2!1sen!2sca!4v1655774330484!5m2!1sen!2sca"
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+    <!-- <div id="map"></div> -->
 </main>

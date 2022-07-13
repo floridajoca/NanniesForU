@@ -1,0 +1,107 @@
+.similarNannies {
+    display: none;
+}
+
+.iframe-map {
+    width: 100%;
+}
+
+.nannyProfile-image {
+    width: 30%;
+}
+
+.banner-image-div {
+    background-color: rgb(206, 206, 206);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header-user {
+    text-align: center;
+}
+
+.userprofile-div {
+    display: flex;
+}
+
+.user-profile {
+    margin: 5%;
+}
+
+.userinfo {
+    padding: 5%;
+}
+
+.head-p {
+    font-weight: bold;
+}
+
+.button {
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.button:nth-child(1) {
+    background-color: rgb(206, 206, 206);
+}
+
+.prev,
+.next {
+    display: inline-block;
+}
+
+.prevNext {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rateCalc {
+    margin: 5%;
+    background-color: azure;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.calcHead {
+    text-align: center;
+}
+
+.form-calculation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ----- */
+
+.avail-section {
+    display: flex;
+}
+
+.schedule-display {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.schedule-display li {
+    display: inline-block;
+    padding: 0.5rem;
+    margin: 1px;
+    width: 7px;
+    height: 7px;
+    background-color: rgba(224, 224, 224, 1);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+}
+
+#map {
+    height: 500px;
+}
