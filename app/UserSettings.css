@@ -1,0 +1,29 @@
+.site-title {
+    text-align: center;
+    color: #104B9E;
+}
+
+.user-settings-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(16, 75, 158, .1);
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.user-settings-wrapper {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
