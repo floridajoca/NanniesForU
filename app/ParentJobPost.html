@@ -1,55 +1,69 @@
 
-            <div class="job-details-container">
-                <div class="job-details-main">
-                    <h2>Job Details</h2>
-                    <img src="https://picsum.photos/800/200?rand=111" alt="">
-                    <div class="job-post-details">
-                        <div class="name-display">
-                            <h4>Name: </h4>
-                            <p id="parentNameOutput"></p>
-                        </div>
-                        
-                        <div class="location-display">
-                            <h4>Location: </h4>
-                            <p id="locationOutput"></p>
-                        </div>
-                        <div class="schedule-display">
-                            <h4>When:</h4>
-                            <ul id="scheduleOutput" class="schedule-display-list">
-                                <li id="sunday">S</li>
-                                <li id="monday">M</li>
-                                <li id="tuesday">T</li>
-                                <li id="wednesday">W</li>
-                                <li id="thursday">T</li>
-                                <li id="friday">F</li>
-                                <li id="saturday">S</li>
-                            </ul>
-                        </div>
-                        <div class="start-date-display">
-                            <h4>Start Date:</h4>
-                            <p id="startDateOutput"></p>
-                        </div>
-                        <div class="end-date-display">
-                            <h4>End Date:</h4>
-                            <p id="endDateOutput"></p>
-                        </div>
-                        <div class="pay-rate-display">
-                            <h4>Pay Rate:</h4>
-                            <p id="payRateOutput"></p>
-                        </div>
-                    </div>
-                    <div class="description-display">
-                        <h3>Description</h3>
-                        <p id="descriptionOutput"></p>
-                    </div>
-                    <div class="job-details-buttons">
-                        <button>Contact Info</button>
-                        <button>See Reviews</button>
-                    </div>
-                </div>
-                <div class="navigation-button">
-                    <button id="prev">&lt; Previous</button>
-                    <button id="next">Next &gt;</button>
-                </div>
-
+<div class="job-details-container">
+    <div class="job-details-main">
+        <h2>Job Details</h2>
+        <img src="https://picsum.photos/800/200?rand=111" alt="">
+        <div class="job-post-details">
+            <div class="name-display">
+                <h4>Name: </h4>
+                <p id="parentNameOutput"></p>
             </div>
+            
+            <div class="location-display">
+                <h4>Location: </h4>
+                <p id="locationOutput"></p>
+            </div>
+            <div class="pay-rate-display">
+                <h4>Hourly Rate:</h4>
+                <p id="payRateOutput"></p>
+            </div>
+            <div class="schedule-display">
+                <h4>When:</h4>
+                <ul id="scheduleOutput" class="schedule-display-list">
+                    <li id="sunday">S</li>
+                    <li id="monday">M</li>
+                    <li id="tuesday">T</li>
+                    <li id="wednesday">W</li>
+                    <li id="thursday">T</li>
+                    <li id="friday">F</li>
+                    <li id="saturday">S</li>
+                </ul>
+            </div>
+            <div class="start-date-display">
+                <h4>Start Date:</h4>
+                <p id="startDateOutput"></p>
+            </div>
+            <div class="end-date-display">
+                <h4>End Date:</h4>
+                <p id="endDateOutput"></p>
+            </div>
+            <div class="reviews-display">
+                <h4>Reviews:</h4>
+                <ul id="reviewsDisplay">
+                    <li id="rating1"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li id="rating2"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li id="rating3"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li id="rating4"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li id="rating5"><i class="fa-solid fa-star rating-inactive"></i></li>
+                </ul>
+                <button id="submitRatings" class="ratings-button" aria-label="submit ratings">Submit</button>
+                <button id="cancelRatings" class="ratings-button" aria-label="cancel ratings">Cancel</button>
+                <p id="ratingCountDisplay"></p>
+            </div>
+            
+        </div>
+        <div class="description-display">
+            <h3>Description</h3>
+            <p id="descriptionOutput"></p>
+        </div>
+        <div class="job-details-buttons">
+            <button>Contact Info</button>
+            <button>See Reviews</button>
+        </div>
+    </div>
+    <div class="navigation-button">
+        <button id="prev">&lt; Previous</button>
+        <button id="next">Next &gt;</button>
+    </div>
+
+</div>
