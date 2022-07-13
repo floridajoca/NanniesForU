@@ -33,7 +33,14 @@ window.onload = async function getNanny() {
             renderNanny(nanny, doc.id);
         });
         snapshot.docs.forEach((doc) => {
-            document.querySelector(`#${doc.id}`).addEventListener('click', () => alert(doc.id))
+            document.querySelector(`#${doc.id}`).addEventListener('click', () => {
+                if(!sessionStorage.getItem('LoginId')) {
+                    alert("you should be logged in to learn more!");
+                } else {
+                    location.replace("#nannyprofiledetails");
+                }
+                }
+            )
         });
     });
 
