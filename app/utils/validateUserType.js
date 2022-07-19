@@ -37,12 +37,11 @@ export function userTypeValidation(){
 
         const menuItemSignOut = document.createElement( "li" );
         menuItemSignOut.innerHTML = '<a href="#" id="sign-out-page">Sign Out</a>';
-        links.append(menuItemSignOut);        
-        const signoutID = document.getElementById('sign-out-page');
-        signoutID.addEventListener('click',function() { signoutClick();},false);
+        links.append(menuItemSignOut);
+        const signOutId = document.getElementById('sign-out-page');
+        signOutId.addEventListener('click',function() { signoutClick();},false);
     }
     else {
-        console.log('No login');
         const menuItemSignIN = document.createElement( "li" );
         menuItemSignIN.innerHTML = '<a href="#login">Login</a> / <a href="#signup">Sign Up</a>';
         links.append(menuItemSignIN);
