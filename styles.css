@@ -62,7 +62,7 @@ Global Styles
 
 body {
     font-family: var(--ff-secondary);
-    background: var(--clr-grey-10);
+    background: var(--clr-white);
     color: var(--clr-grey-1);
     line-height: 1.5;
     font-size: 0.875rem;
@@ -160,7 +160,6 @@ p {
 
 main {
     min-height: 100vh;
-    display: grid;
     place-items: center;
 }
 
@@ -196,7 +195,7 @@ nav {
 }
 
 .logo {
-    height: 200px;
+    height: 100px;
 }
 
 .links a {
@@ -299,7 +298,7 @@ nav {
 }
 
 .footer-last-div {
-    padding: 5%;
+    padding: 1%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
