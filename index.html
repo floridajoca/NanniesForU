@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css'
-        integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=='
-        crossorigin='anonymous' referrerpolicy='no-referrer' />
+    <link rel="stylesheet" href="styles.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' integrity='sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==' crossorigin='anonymous' referrerpolicy='no-referrer'
+    />
     <script src="firebase.js" type="module" defer></script>
     <script src="router.js" defer></script>
     <script src="script.js" defer></script>
@@ -27,9 +26,9 @@
 
 
     <header class="main-header">
-        <p class="main-tagline">Lorem ipsum is the simply test for printing</p>
+        <p class="main-tagline">Looking for a babysitting job? <span class="click-here"><a href="#" class="click-link">Click Here</a></span></p>
 
-        <nav class="main-navbar">
+        <!-- <nav class="main-navbar">
             <div class="mobile-nav">
                 <img src="app/img/sample-logo.png" alt="logo-of-site" class="logo">
                 <div class="menu-button">
@@ -53,21 +52,47 @@
                         <li class="ul-li-header"><a href="#" class="link-header">Login/Signup</a></li>
 
                     </ul>
-                </div>
-                <div class="social-div-header">
-                    <ul class="social-header">
-                        <li class="li-social-header"><a href="#" class="link-social-header"><i
-                                    class="fa-brands fa-facebook"></i></a></li>
-                        <li class="li-social-header"><a href="#" class="link-social-header"><i
-                                    class="fa-brands fa-instagram"></i></a></li>
-                        <li class="li-soacial-header"><a href="#" class="link-social-header"><i
-                                    class="fa-brands fa-twitter"></i></a></li>
-                        <li class="li-social-header"><a href="#" class="link-social-header"><i
-                                    class="fa-brands fa-pinterest"></i></a></li>
-                    </ul>
-                </div>
-
+                </div> -->
+        <div class="nav-center">
+            <div class="nav-header">
+                <img src="app/img/logo.svg" class="logo" alt="logo">
+                <button class="nav-toggle">
+                                    <i class="fas fa-bars"></i>
+                                </button>
             </div>
+
+            <!-- links -->
+            <ul class="links">
+                <li>
+                    <a href="#">home</a>
+                </li>
+                <li>
+                    <a href="#">about</a>
+                </li>
+                <li>
+                    <a href="#">How it works</a>
+                </li>
+                <li>
+                    <a href="#">profile</a>
+                </li>
+                <li>
+                    <a href="#">Login/Signup</a>
+                </li>
+            </ul>
+            <div class="social-div-header">
+                <ul class="social-header">
+                    <li class="li-social-header"><a href="#" class="link-social-header"><i
+                                    class="fa-brands fa-facebook"></i></a></li>
+                    <li class="li-social-header"><a href="#" class="link-social-header"><i
+                                    class="fa-brands fa-instagram"></i></a></li>
+                    <li class="li-soacial-header"><a href="#" class="link-social-header"><i
+                                    class="fa-brands fa-twitter"></i></a></li>
+                    <li class="li-social-header"><a href="#" class="link-social-header"><i
+                                    class="fa-brands fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
 
         </nav>
 
@@ -103,26 +128,26 @@
                 <p class="heading-footer">Social Links</p>
                 <ul class="social-ul">
                     <li class="social-ul-li">
-                        <a href="#" class="ul-link"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="ul-link-social"><i class="fa-brands fa-facebook"></i></a>
                     </li>
                     <li class="social-ul-li">
-                        <a href="#" class="ul-link"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="ul-link-social"><i class="fa-brands fa-instagram"></i></a>
                     </li>
                     <li class="social-ul-li">
-                        <a href="#" class="ul-link"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="ul-link-social"><i class="fa-brands fa-twitter"></i></a>
                     </li>
                     <li class="social-ul-li">
-                        <a href="#" class="ul-link"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="#" class="ul-link-social"><i class="fa-brands fa-pinterest"></i></a>
                     </li>
                 </ul>
             </div>
-            <div class="div-footer-search">
+            <!-- <div class="div-footer-search">
                 <p class="heading-footer">Subscribe</p>
                 <form class="footer-search-form">
                     <input class="footer-search-input" type="text" placeholder=" Subscribe" name="search2">
                     <button class="footer-search-button" type="submit"> Submit </button>
                 </form>
-            </div>
+            </div> -->
         </div>
 
         <div class="last-div">
