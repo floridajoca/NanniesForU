@@ -1,5 +1,9 @@
 'use strict';
 
+import {userTypeValidation} from "./app/utils/validateUserType.js";
+
+userTypeValidation();
+
 Router.init("main-area", [
     new Page("#home", 'app/Home.html'),
     new Page("#about", 'app/About.html'),

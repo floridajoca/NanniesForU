@@ -1,42 +1,28 @@
-
 'use strict';
 import {db} from "../firebase.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
 
-
-
 const colRef = collection(db, 'events');
-
+let currentIndex = 0;
 const event_array= [];
-getDocs(colRef)
-.then((snapshot) => {
-  
-  let events = [];
-  //console.log(snapshot.docs);
 
-  snapshot.docs.forEach((doc)=>{
+getDocs(colRef).then((snapshot) => {
+    let events = [];
+    snapshot.docs.forEach((doc)=>{
     event_array.push({ ...doc.data(), id: doc.id });
   })
   console.log(event_array);
 })
-// .catch(err ()=> {
-//   console.log(err.message);
-// })
-
-
-let currentIndex = 0;
 
 next.addEventListener('click', () => {
-  if(currentIndex<event_array.length-1){
-
-  currentIndex = currentIndex+1;
-
+  if(currentIndex<event_array.length-1)
+  {
+    currentIndex = currentIndex+1;
   }
   else{
-      currentIndex = 0;
+    currentIndex = 0;
   }
   fetch_data();
-  
 })
 
 prev.addEventListener('click', () => {
@@ -49,7 +35,6 @@ prev.addEventListener('click', () => {
    }
    fetch_data();
 })
-
 
 function fetch_data() {
   reset_color();
@@ -73,13 +58,11 @@ function fetch_data() {
       day_id.style.color = "rgba(255, 255, 255, 1)";
     }
   }
-
 }
 
 function reset_color(){
-
-var ul = document.getElementById("scheduleOutput");
-var listItems = ul.getElementsByTagName("li");
+const ul = document.getElementById("scheduleOutput");
+const listItems = ul.getElementsByTagName("li");
 for(let li of  listItems){
   li.style.backgroundColor = "rgba(224, 224, 224, 1)";
   li.style.color = "rgba(0, 0, 0, 1)";
