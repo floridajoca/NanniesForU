@@ -1,4 +1,3 @@
-
 'use strict';
 import {db} from "../firebase.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
@@ -14,9 +13,6 @@ getDocs(colRef).then((snapshot) => {
   })
   console.log(event_array);
 })
-// .catch(err ()=> {
-//   console.log(err.message);
-// })
 
 next.addEventListener('click', () => {
   if(currentIndex<event_array.length-1)
@@ -65,8 +61,8 @@ function fetch_data() {
 }
 
 function reset_color(){
-var ul = document.getElementById("scheduleOutput");
-var listItems = ul.getElementsByTagName("li");
+const ul = document.getElementById("scheduleOutput");
+const listItems = ul.getElementsByTagName("li");
 for(let li of  listItems){
   li.style.backgroundColor = "rgba(224, 224, 224, 1)";
   li.style.color = "rgba(0, 0, 0, 1)";

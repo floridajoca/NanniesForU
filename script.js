@@ -1,14 +1,8 @@
 'use strict';
 
-import {userTypeValidation} from "./app/utils/validateUser.js";
-//import {signout,signoutClick} from "./app/utils/signout.js";
+import {userTypeValidation} from "./app/utils/validateUserType.js";
 
 userTypeValidation();
-
-// myFunc();
-// function myFunc(){
-//     console.log(signoutClick);
-// }
 
 Router.init("main-area", [
     new Page("#home", 'app/Home.html'),
