@@ -3,7 +3,7 @@ import {db} from "../firebase.js"
 import {collection, query, where, getDocs} from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
 
 
-window.onload = async function getNannyExperience() {
+async function getNannyExperience() {
     const nannyExperience = collection(db, "nanny");
     await getDocs(nannyExperience).then((snapshot) => {
         snapshot.forEach((doc) => {
