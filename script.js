@@ -16,4 +16,5 @@ Router.init("main-area", [
     new Page("#parentjobpost", 'app/ParentJobPost.html'),
     new Page("#nannyprofiledetails", 'app/NannyProfileDetails.html'),
     new Page("#parentpostpage", 'app/ParentPostPage.html'),
+    new Page("#nannyprofilelist", 'app/NannyProfileList.html'),
 ]);
