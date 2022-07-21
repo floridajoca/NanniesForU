@@ -11,7 +11,7 @@ Router.init("main-area", [
     new Page("#nannyprofilelist", 'app/NannyProfileList.html'),
     new Page("#signup", 'app/SignUp.html'),
     new Page("#login", 'app/Login.html'),
-    new Page("#parentlist", 'app/ParentProfileList.html'),
+    new Page("#parentprofilelist", 'app/ParentProfileList.html'),
     new Page("#usersettings", 'app/UserSettings.html'),
     new Page("#parentjobpost", 'app/ParentJobPost.html'),
     new Page("#nannyprofiledetails", 'app/NannyProfileDetails.html'),

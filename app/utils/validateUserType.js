@@ -18,10 +18,10 @@ export function userTypeValidation(){
         {
             console.log(sessionStorage.getItem('User_Type'),links);
             const menuItem4 = document.createElement( "li" );
-            menuItem4.innerHTML = '<a href="#nannyprofiles">Search Nanny</a>';
+            menuItem4.innerHTML = '<a href="#nannyprofilelist">Nanny profile List</a>';
             links.append(menuItem4);
             const menuItem5 = document.createElement( "li" );
-            menuItem5.innerHTML = '<a href="#parentprofiledetails">Profile</a>';
+            menuItem5.innerHTML = '<a href="#nannyprofiledetails">Nanny profile details</a>';
             links.append(menuItem5);
         }
         else if(sessionStorage.getItem('User_Type') == 'Nanny')
