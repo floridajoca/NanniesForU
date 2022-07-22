@@ -1,65 +1,63 @@
 'use strict';
 import { db } from "../firebase.js";
-import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
+import { collection,getDocs, getDoc, doc, query } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
 
+let  NannyProfileDetails = {};
 
+const selectedNannyId = sessionStorage.getItem("selectedNanny");
 
-const colRef = collection(db, 'user');
+function getNannyDetails() {
+    console.log("Selected nanny" + selectedNannyId)
+    getDoc(doc(db, "user", selectedNannyId)).then((doc) => {
+        NannyProfileDetails = doc.data();
+        const nannyExperience = query(collection(db, "nanny"));
+         getDocs(nannyExperience).then( (snapshot) => {
+             snapshot.forEach((doc) => {
+                if(doc.data().nanny_id === selectedNannyId) {
+                    NannyProfileDetails = {
+                        ...NannyProfileDetails,
+                        ...doc.data(),
+                    }
+                }
+            });
+            renderNannyDetails();
+        });
+    });
+}
 
-const user_array = [];
-getDocs(colRef)
-    .then((snapshot) => {
+function renderNannyDetails() {
+    const nannyName = document.querySelector("#nanny-name");
+    const nannyLocation = document.querySelector("#nanny-location");
+    const nannyDescription = document.querySelector("#nanny-description");
+    const nannyRate = document.querySelector("#nanny-rate");
+    const nannyAvailability =  document.querySelector("#nanny-availability");
+    const nannyReviews =  document.querySelector("#nanny-reviews");
 
-        let user_array1 = [];
-        //console.log(snapshot.docs);
+    nannyName.innerHTML += NannyProfileDetails.full_name;
+    nannyLocation.innerHTML += NannyProfileDetails.city;
+    nannyDescription.innerHTML += NannyProfileDetails.description ? NannyProfileDetails.description : "";
+    nannyRate.innerHTML += NannyProfileDetails.payrate;
+    nannyAvailability.innerHTML += NannyProfileDetails.schedule;
+    nannyReviews.innerHTML += NannyProfileDetails.ratings;
+}
 
-        snapshot.docs.forEach((doc) => {
-            user_array.push({...doc.data(), id: doc.id });
-        })
-        console.log(user_array);
+getNannyDetails();
 
-    })
-
-// .catch(err) {
-//     console.log(err.message);
-// }
-
-
-
-
-
-
-let currentIndex = 0;
-
-next.addEventListener('click', () => {
-
-
-    if (currentIndex < user_array.length - 1) {
-
-        currentIndex = currentIndex + 1;
-
+const contact = document.querySelector("#contactBtn");
+contact.addEventListener("click", () => {
+    if(!sessionStorage.getItem('LoginId')) {
+        alert("You should be logged in to see contact information.");
     } else {
-        currentIndex = 0;
+        console.log("here" + JSON.stringify(NannyProfileDetails))
+        const contactWrapper = document.querySelector(".contact-info");
+            contactWrapper.innerHTML += `
+            <ul>
+                <li>
+                    ${NannyProfileDetails.email}
+                </li>
+                <li>
+                    ${NannyProfileDetails.contact}
+                </li>
+            </ul>`;
     }
-    nannyName.innerHTML = user_array[currentIndex].first_name;
-    nannyLocation.innerHTML = user_array[currentIndex].city;
-
-    nannyRate.innerHTML = user_array[currentIndex].pay_rate + ' $ per hour';
-
-    // descriptionOutput.innerHTML = user_array[currentIndex].description;
-
-})
-
-prev.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex = currentIndex - 1;
-    } else {
-        currentIndex = user_array.length - 1;
-    }
-    nannyName.innerHTML = user_array[currentIndex].first_name;
-    nannyLocation.innerHTML = user_array[currentIndex].city;
-
-    nannyRate.innerHTML = user_array[currentIndex].pay_rate + ' per hour';
-
-    // descriptionOutput.innerHTML = user_array[currentIndex].description;
-})
+});
