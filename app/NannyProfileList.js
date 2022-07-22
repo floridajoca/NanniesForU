@@ -10,7 +10,7 @@ async function getNannies() {
             renderNanny(doc.id, doc.data(), nannies[doc.id]?.payrate || 0);
         });
         snapshot.docs.forEach((doc) => {
-            document.querySelector(`#${doc.id}`).addEventListener('click', () => {
+            document.getElementById(`${doc.id}`).addEventListener('click', () => {
                     location.assign("#nannyprofiledetails");
                     sessionStorage.setItem("selectedNanny", doc.id);
                 }
