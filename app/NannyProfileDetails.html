@@ -1,118 +1,31 @@
-<main class="main-nanny">
-    <div class="banner-image-div">
-        <p class="banner-image-p">Banner-image</p>
+<main>
+    <h1>Nanny Profile</h1>
+    <div class="nanny-details-wrapper">
+    <img id="nanny-profile" src="https://picsum.photos/300/300">
+        <p id="nanny-name">Name: </p>
+        <p id="nanny-location">Location: </p>
+        <p id="nanny-rate">Hourly Rate: </p>
+
+        <p id="nanny-availability">Availability: </p>
+        <p id="nanny-reviews">Reviews: </p>
+        <p id="nanny-description">Description: </p>
+        <button id="contactBtn"> Contact Info: </button>
+        <div class="contact-info"></div>
     </div>
-    <div class="user-profile">
-        <p class="main-header-user">User Profile</p>
-        <div class="userprofile-div">
-            <img src="https://picsum.photos/700/600" alt="" class="nannyProfile-image">
-            <div class="userinfo">
-
-                <table id="table" class="table">
-                    <tr>
-                        <td>Name:</td>
-                        <td id="nannyName"></td>
-
-                    </tr>
-                    <!-- <tr>
-                        <td>Age:</td>
-                        <td id="nannyAge">33 yrs</td>
-                    </tr> -->
-                    <tr>
-                        <td>Location:</td>
-                        <td id="nannyLocation"></td>
-                    </tr>
-                    <tr>
-                        <td>Hourly Rate:</td>
-                        <td id="nannyRate"></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="description">
-            <p class="head-p">Description</p>
-            <p class="description-para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est quos ullam labore incidunt a soluta voluptas porro. Atque labore distinctio quia unde maxime dolorum magnam fuga quibusdam, autem dolor debitis.</p>
-        </div>
-        <div class="buttons">
-            <button class="button">
-                Contact Info
-            </button>
-            <button class="button">
-                See Reviews
-            </button>
-        </div>
-        <div class="prevNext">
-
-            <button id="prev">&lt; Previous</button>
-            <button id="next">Next &gt;</button>
-
-
-
-        </div>
-    </div>
-    <div class="rateCalc">
-        <h3 class="calcHead">Rate Calculation</h3>
-        <form action="#" class="form-calculation">
-            <div class="duration">
-                <label for="">Duration</label>
-                <input type="text">
-            </div>
-            <div>
-                <label for="">Pay Rate</label>
-                <input type="text">
-            </div>
-            <div>
-                <label for="">GST Tax 5%</label>
-                <input type="text">
-            </div>
-            <div>
-                <label for="">GST Tax 7%</label>
-                <input type="text">
-            </div>
-            <button class="calculate" type="submit">Calculate</button>
-            <div>
-                <label for="">Total</label>
-                <input type="text">
-            </div>
+    <div class="calculation">
+        <h2>Pay Calculation</h2>
+        <form id="calculate">
+            <label for="duration">Duration </label>
+            <input type="number" name="duration" id="duration" placeholder="duration">
+            <label for="period">Period</label>
+            <input type="number" name="period" id="period" placeholder="Period">
+            <label for="rate">Pay rate</label>
+            <input type="number" name="rate" id="rate" placeholder="Pay rate">
+            <button id="calcBtn" type="submit">Calculate</button>
         </form>
     </div>
-    <div class="similarNannies">
-        <h3 class="sim-heading-nanny">Similar Nannies </h3>
-        <div class="nanny-div">
-            <div class="nanny-profile">
-                <img src="https://picsum.photos/700/600" alt="" class="sim-nanny">
-                <p class="nanny-name">John Doe</p>
-                <p class="pay-rate">$$$</p>
-                <p class="desc-nanny">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero cupiditate beatae provident facilis nihil reprehenderit, ut hic quasi possimus id exercitationem laudantium, ea error ullam.</p>
-            </div>
-            <div class="nanny-profile">
-                <img src="https://picsum.photos/700/600" alt="" class="sim-nanny">
-                <p class="nanny-name">John Doe</p>
-                <p class="pay-rate">$$$</p>
-                <p class="desc-nanny">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero cupiditate beatae provident facilis nihil reprehenderit, ut hic quasi possimus id exercitationem laudantium, ea error ullam.</p>
-            </div>
-            <div class="nanny-profile">
-                <img src="https://picsum.photos/700/600" alt="" class="sim-nanny">
-                <p class="nanny-name">John Doe</p>
-                <p class="pay-rate">$$$</p>
-                <p class="desc-nanny">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero cupiditate beatae provident facilis nihil reprehenderit, ut hic quasi possimus id exercitationem laudantium, ea error ullam.</p>
-            </div>
-            <div class="nanny-profile">
-                <img src="https://picsum.photos/700/600" alt="" class="sim-nanny">
-                <p class="nanny-name">John Doe</p>
-                <p class="pay-rate">$$$</p>
-                <p class="desc-nanny">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero cupiditate beatae provident facilis nihil reprehenderit, ut hic quasi possimus id exercitationem laudantium, ea error ullam.</p>
-            </div>
-            <div class="nanny-profile">
-                <img src="https://picsum.photos/700/600" alt="" class="sim-nanny">
-                <p class="nanny-name">John Doe</p>
-                <p class="pay-rate">$$$</p>
-                <p class="desc-nanny">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero cupiditate beatae provident facilis nihil reprehenderit, ut hic quasi possimus id exercitationem laudantium, ea error ullam.</p>
-            </div>
-        </div>
-    </div>
-    <div class="map">
-        <iframe class="iframe-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2605.7233879192127!2d-123.1107382843485!3d49.22477278279311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486746f412563f7%3A0x36606d221509fdfe!2sLangara%20College!5e0!3m2!1sen!2sca!4v1655774330484!5m2!1sen!2sca"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <div class="nearby-nannies">
+
     </div>
 </main>

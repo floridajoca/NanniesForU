@@ -77,6 +77,7 @@ function init() {
                     country,
                     user_type: userType,
                 });
+                location.replace("#login");
                 console.log("Document written with ID: ", docRef.id);
                 console.log(docRef.data());
             }).catch((error) => {
