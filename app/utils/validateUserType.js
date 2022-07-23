@@ -31,7 +31,7 @@ export function userTypeValidation(){
             menuItem4.innerHTML = '<a href="#parentjobpost">Job Posts</a>';
             links.append(menuItem4);
             const menuItem5 = document.createElement( "li" );
-            menuItem5.innerHTML = '<a href="#nannyprofiledetails">Profile</a>';
+            menuItem5.innerHTML = '<a href="#parentprofilelist">Parent Profile List</a>';
             links.append(menuItem5);
         }
 
