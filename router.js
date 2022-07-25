@@ -6,7 +6,6 @@ class Page {
         this.htmlName = htmlName;
         this.jsName = jsName;
         this.cssName = cssName;
-
         this.jsName = jsName ? jsName : htmlName.substring(0, htmlName.lastIndexOf(".")) + ".js";
         this.cssName = cssName ? cssName : htmlName.substring(0, htmlName.lastIndexOf(".")) + ".css";
     }
@@ -16,7 +15,7 @@ class Router {
     static init(mainAreaId, pages) {
         Router.pages = pages;
         Router.rootElem = document.getElementById(mainAreaId);
-        window.addEventListener('hashchange', function (e) {
+        window.addEventListener('hashchange', function(e) {
             Router.handleHashChange();
         });
         Router.handleHashChange();

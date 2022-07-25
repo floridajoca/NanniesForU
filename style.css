@@ -405,7 +405,8 @@ body {
 
 /* ------------------- Nanny Profile page start ---------------------- */
 
-.similarNannies {
+
+/* .similarNannies {
     display: none;
 }
 
@@ -481,7 +482,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 
 
 /* ------------------- Nanny Profile page end ---------------------- */

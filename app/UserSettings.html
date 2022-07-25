@@ -1,0 +1,62 @@
+<h2 class="site-title">Edit Profile</h2>
+
+<div class="user-settings-wrapper">
+    <h2>Basic information
+    </h2>
+    <div class="form-wrapper">
+        <div class="user-settings-container">
+            <label for="username">Name</label>
+            <input type="text" id="username">
+        </div>
+        <div class="user-settings-container">
+            <label for="userEmail">Email</label>
+            <input type="text" id="userEmail">
+        </div>
+        <div class="user-settings-container">
+            <label for="userPhoneNumber">Phone Number</label>
+            <input type="text" id="userPhoneNumber">
+        </div>
+    </div>
+    <h2>Change Password</h2>
+    <div class="form-wrapper">
+        <div class="user-settings-container">
+            <label for="password">new password</label>
+            <input onchange="function changed() {
+              console.log('password changed')
+            }" type="text" id="password">
+        </div>
+        <div class="user-settings-container">
+            <label for="confirmPassword">confirm password</label>
+            <input type="text" id="confirmPassword">
+        </div>
+    </div>
+
+    <h2>Create or Update Job post</h2>
+    <div class="form-wrapper">
+        <div class="user-settings-container">
+            <label for="numberChildren">looking for</label>
+            <input type="text" id="numberChildren">
+        </div>
+        <div class="user-settings-container">
+            <label for="payRate">pay rate</label>
+            <input type="text" id="payRate">
+        </div>
+        <div class="user-settings-container">
+            <label for="availibility">Availibility</label>
+            <input type="text" id="availibility">
+        </div>
+        <div class="user-settings-container">
+            <label for="description">Description</label>
+            <input type="text" id="description">
+        </div>
+        <div class="user-settings-container">
+            <label for="startDate">Start Date</label>
+            <input type="text" id="startDate">
+        </div>
+        <div class="user-settings-container">
+            <label for="endDate">End Date</label>
+            <input type="text" id="endDate">
+        </div>
+    </div>
+    <button id="btn-update" type="submit">Update</button>
+</div>

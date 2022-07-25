@@ -1,0 +1,35 @@
+.nanny-profile {
+    border: 1px solid grey;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 200px;
+    margin: auto;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: rgba(16, 75, 158, .1);
+    margin-bottom: 2rem;
+}
+
+.nanny-profile img {
+    max-width: 100%;
+    height: auto;
+}
+
+.more-info {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    padding: .5rem;
+    color: #104B9E;
+    background-color: rgba(16, 75, 158, 0);
+    border: 1px solid rgb(16, 75, 158);
+}
+.more-info:hover {
+    border-radius: 2rem;
+    padding: .5rem;
+    color: white;
+    background-color: rgb(16, 75, 158);
+}
+
+#map-div { width: 40rem; height: 45rem; }
