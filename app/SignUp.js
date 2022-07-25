@@ -41,6 +41,9 @@ function validateInput() {
     } else if (!phoneNumber || phoneNumber === "") {
         alert("Phone number is required");
         return false;
+    }  else if (!city || city === "") {
+        alert("City is required");
+        return false;
     } else if (!password || password === "" || !isPasswordSecure(password)) {
         alert("Password is required and should not be empty!");
         return false;
@@ -79,6 +82,10 @@ function init() {
                     country,
                     user_type: userType,
                     location: convertedPostalCode,
+                  ratings: {
+                    stars: 0,
+                    count: 0,
+                  }
                 });
                 location.replace("#login");
                 console.log("Document written with ID: ", docRef.id);
