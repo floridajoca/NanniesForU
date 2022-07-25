@@ -4,13 +4,14 @@ import { collection, query, where, getDocs } from "https://www.gstatic.com/fireb
 
 export var JobPostData;
 
+const Parents = [];
 const JobListWrapper = document.querySelector(".parent-profile-list-wrapper");
 let JobPostSnapshot = [];
 let RatingStars ;
 const RatingActive= "fa-solid fa-star rating-active";
 const RatingInactive= "fa-solid fa-star rating-inactive";
 
-async function getparents() {
+async function getParents() {
     const parentsList = query(collection(db, "user"), where("user_type", "==", "Parent"));
     await getDocs(parentsList).then(async (snapshot) => {
         const posts = await getParentJobPosts();
@@ -18,10 +19,17 @@ async function getparents() {
             if (posts[doc.id] !== undefined) {
                 console.log(doc.id);
                 renderParent(doc.id, doc.data(), posts[doc.id].pay_rate, posts[doc.id].looking_for || 'my kids', posts[doc.id].schedule);
-
+                Parents.push({
+                    name: doc.data().full_name,
+                    geolocation: {
+                        lat: doc.data().location.latitude,
+                        lng: doc.data().location.longitude,
+                    }
+                })
             }
         });
     });
+    addParentsMarkers();
 }
 
 async function getParentJobPosts() {
@@ -35,8 +43,7 @@ async function getParentJobPosts() {
     return PostsByParentId;
 }
 
-function renderParent(id, Parent, pay_rate, looking_for,schedule) 
-{
+function renderParent(id, Parent, pay_rate, looking_for,schedule) {
     document.querySelector(".parent-profile-list-wrapper").innerHTML += `
         <div class="Parent-profile" id="${id}-parent-profile">
             <div class="profile-image">
@@ -70,22 +77,22 @@ function renderParent(id, Parent, pay_rate, looking_for,schedule)
             </div>
          </div>
         `
-    
+
     let calendar_days= schedule; //get schedule values from event
     let ScheduleDisplayID = document.getElementById(id+"scheduleOutput");
     let ScheduleListElements = [...ScheduleDisplayID.getElementsByTagName("li")];
     renderSchedule(ScheduleDisplayID,calendar_days);
-    
+
     let RatingCountDisplayID = document.getElementById(id+"reviewsDisplay");
     RatingStars = [...RatingCountDisplayID.getElementsByClassName("fa-star")];
     renderRatings(Parent.ratings,RatingStars);
 }
 
-function render_button_id() {
+function renderButtonId() {
     JobPostSnapshot.forEach((doc) => {
         let parentID = doc.parent_id;
         let pid = document.getElementById(parentID);
-        if (pid !== null) 
+        if (pid !== null)
         {
             pid.addEventListener('click', () => {
                 if (!sessionStorage.getItem('LoginId')) {
@@ -109,7 +116,7 @@ function renderRatings(ratings,RatingStars){
     let starsDisplay = parseFloat(ratings.stars).toFixed(2);
     let count=ratings.count;
       for (let i = 0; i<5; i++)
-      { 
+      {
        if(i<parseInt(starsDisplay)){
           RatingStars[i].className = RatingActive;
         }
@@ -136,6 +143,27 @@ function renderSchedule(ScheduleDisplayID,calendar_days)
 init();
 
 async function init() {
-    await getparents();
-    render_button_id();
+    await getParents();
+    renderButtonId();
 };
+
+const currentUserLocation = JSON.parse(sessionStorage.getItem("location"));
+
+let map = tt.map({
+    key: API_KEY,
+    container: 'map-div',
+    center: currentUserLocation,
+    zoom: 12
+});
+
+const currentUserMarker = new tt.Marker().setLngLat(currentUserLocation).addTo(map);
+const currentUserPopup = new tt.Popup({ anchor: 'top' }).setText('Me')
+currentUserMarker.setPopup(currentUserPopup).togglePopup();
+
+function addParentsMarkers() {
+    Parents.forEach(function (child) {
+        const marker = new tt.Marker().setLngLat(child.geolocation).addTo(map);
+        var popup2 = new tt.Popup({ anchor: 'top' }).setText(child.name)
+        marker.setPopup(popup2).togglePopup();
+    });
+}
