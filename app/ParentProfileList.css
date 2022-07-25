@@ -51,7 +51,7 @@
 ul.reviewsDisplay {
     padding: 0;
     margin: 0;
-    
+
 }
 
 ul.reviewsDisplay > * {
@@ -165,7 +165,7 @@ ul.schedule-display-list {
         width: 241px;
         height: 291px;
     }
-    
+
 
     .Parent-profile{
         width: 610px;
@@ -173,3 +173,4 @@ ul.schedule-display-list {
     }
 }
 
+#map-div { width: 40rem; height: 45rem; }
