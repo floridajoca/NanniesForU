@@ -40,7 +40,7 @@ async function signIn(userCredential){
             sessionStorage.setItem('LoginId', user.uid);
             sessionStorage.setItem('UserId', userID);
             sessionStorage.setItem('User_Type', userDetails.user_type);
-
+            sessionStorage.setItem('location', JSON.stringify(userDetails.location));
             location.replace("#home");
             location.reload();
 }
