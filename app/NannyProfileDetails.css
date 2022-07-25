@@ -1,0 +1,61 @@
+.fa-star{
+    color: grey;
+}
+
+.rating-active{
+    color: gold;
+}
+
+
+ul#reviewsDisplay {
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+ul#reviewsDisplay li{
+    display: inline;    
+}
+
+
+ul#reviewsDisplay > * {
+    padding: 1rem;
+    margin: 0;
+}
+
+.ratings-button{
+    display: none;
+}
+
+.ratings-button{
+    border-radius: 20px;
+    padding: 0.25rem;
+    color: white;
+    background-color: #FF435B;
+    margin-right: 1rem;
+    font-size: 21px;
+}
+
+/* --schedule display-------------------------- */
+
+ul.schedule-display-list {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+}
+
+.schedule-display-list li{
+    display: inline-block;
+    margin: 0.25rem;
+    padding:0.5rem;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(224, 224, 224, 1);
+    border-radius: 50%;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+/* -----------------------end schedule display-- */

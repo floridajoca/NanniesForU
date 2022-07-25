@@ -46,7 +46,6 @@ function renderNanny(id, nanny, payrate) {
             <p>${nanny.full_name}</p>  
             <p>Location: ${nanny.city}</p>
             <p>Pay rate:${payrate}</p>
-            <p>ratings:</p>
             <button id="${id}" class="more-info">More info</button>
          </div>
         `

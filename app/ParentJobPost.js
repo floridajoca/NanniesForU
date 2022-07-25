@@ -8,7 +8,6 @@ import { query, where, collection, documentId, getDocs, getDoc, doc, updateDoc }
 let RatingStars = [...document.getElementsByClassName("fa-star")];
 const RatingActive= "fa-solid fa-star rating-active";
 const RatingInactive= "fa-solid fa-star rating-inactive";
-let parent_details;
 const submitRatings= document.getElementById('submitRatings');
 const cancelRatings= document.getElementById('cancelRatings');
 let index=0; //RatingIndex
@@ -16,13 +15,13 @@ let stars;
 let count;
 let flagRatingsChecked=false;
 let ratingHistory=false;
-
 index = 0;
 stars = 0;
 count = 0;
 flagRatingsChecked=false;
 ratingHistory=false;
 
+let parent_details;
 let  ParentProfileDetails = {};
 const CurrentParentPostIndex = sessionStorage.getItem("CurrentParentPostIndex");
 
@@ -191,6 +190,36 @@ function reset_color()
   for (let i = 0; i <5; i++) 
     RatingStars[i].className = RatingInactive;
 }
+
+
+const contact = document.querySelector("#contactBtn");
+const contactWrapper = document.querySelector(".contact-info");
+let contactShowFlag = false;
+contact.addEventListener("click", () => {
+
+  if(contactShowFlag===false)
+  {
+      if(!sessionStorage.getItem('LoginId')) {
+            alert("You should be logged in to see contact information.");
+        } else {
+            contactShowFlag = true;
+            const contactWrapper = document.querySelector(".contact-info");
+                contactWrapper.innerHTML = `
+                <ul class="contact-info-details">
+                    <li>
+                      Email:<span> ${ParentProfileDetails.email}</span>
+                    </li>
+                    <li>
+                      Contact:<span>${ParentProfileDetails.contact}</span>
+                    </li>
+                </ul>`;
+        }
+  }
+  else{
+    contactWrapper.innerHTML = "";
+    contactShowFlag=false;
+  }
+});
 
 
 getParentPostDetails();
