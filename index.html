@@ -12,7 +12,11 @@
     <script src="firebase.js" type="module" defer></script>
     <script src="router.js" defer></script>
     <script src="script.js" type="module" defer></script>
-
+    <script src="app/maps/tomtomAuth.js" defer></script>
+    <script src="app/maps/convertPostalCode.js"  type="module" defer></script>
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps.css'>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"></script>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/services/services-web.min.js"></script>
     <title>Nannies For You</title>
 </head>
 
@@ -26,6 +30,7 @@
         <a href="#parentjobpost">Job Posts</a>
         <a href="#nannyprofiledetails">profile details</a>
         <a href="#nannyprofilelist"> nanny profile list</a>
+        <a href="#usersettings">User Settings</a>
     </div>
 
     <header class="main-header">
@@ -78,7 +83,6 @@
 
     <main>
         <div id="main-area"></div>
-
     </main>
 
 

@@ -2,21 +2,32 @@
 import {db} from "../firebase.js"
 import {collection, query, where, getDocs} from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
 
+let Nannies = [];
+
 async function getNannies() {
     const nanniesList = query(collection(db, "user"), where("user_type", "==", "Nanny"));
     await getDocs(nanniesList).then(async (snapshot) => {
         const nannies = await getNannyExperience();
         snapshot.docs.forEach((doc) => {
             renderNanny(doc.id, doc.data(), nannies[doc.id]?.payrate || 0);
+          Nannies.push(
+              {
+                  name: doc.data().full_name,
+                  geolocation: {
+                    lat: doc.data().location.latitude,
+                    lng: doc.data().location.longitude,
+                  }
+            });
         });
         snapshot.docs.forEach((doc) => {
-            document.querySelector(`#${doc.id}`).addEventListener('click', () => {
+            document.getElementById(`${doc.id}`).addEventListener('click', () => {
                     location.assign("#nannyprofiledetails");
                     sessionStorage.setItem("selectedNanny", doc.id);
                 }
             )
         });
     });
+    addNannyMarkers();
 }
 
 async function getNannyExperience() {
@@ -40,5 +51,25 @@ function renderNanny(id, nanny, payrate) {
          </div>
         `
 }
+
+const currentUserLocation = JSON.parse(sessionStorage.getItem("location"));
+
+let map = tt.map({
+    key: API_KEY,
+    container: 'map-div',
+    center: currentUserLocation,
+    zoom: 12
+});
+
+const currentUserMarker = new tt.Marker().setLngLat(currentUserLocation).addTo(map);
+const currentUserPopup = new tt.Popup({ anchor: 'top' }).setText('Me')
+currentUserMarker.setPopup(currentUserPopup).togglePopup();
+
+function addNannyMarkers() {
+Nannies.forEach(function (child) {
+    const marker = new tt.Marker().setLngLat(child.geolocation).addTo(map);
+    var popup2 = new tt.Popup({ anchor: 'top' }).setText(child.name)
+    marker.setPopup(popup2).togglePopup();
+})}
 
 getNannies();

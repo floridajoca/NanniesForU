@@ -31,3 +31,5 @@
     color: white;
     background-color: rgb(16, 75, 158);
 }
+
+#map-div { width: 40rem; height: 45rem; }
