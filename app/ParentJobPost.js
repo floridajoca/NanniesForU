@@ -1,10 +1,7 @@
 'use strict';
 import {db} from "../firebase.js";
 import { query, where, collection, documentId, getDocs, getDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
-//import { getFirestore } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
-//import {JobPostData} from "./ParentProfileList.js";
 
-//const event_array= [];
 let RatingStars = [...document.getElementsByClassName("fa-star")];
 const RatingActive= "fa-solid fa-star rating-active";
 const RatingInactive= "fa-solid fa-star rating-inactive";
@@ -22,17 +19,17 @@ flagRatingsChecked=false;
 ratingHistory=false;
 
 let parent_details;
-let  ParentProfileDetails = {};
+let ParentProfileDetails = {};
 const CurrentParentPostIndex = sessionStorage.getItem("CurrentParentPostIndex");
 
 
 async function getParentPostDetails() {
   await getDoc(doc(db, "user", CurrentParentPostIndex)).then((doc) => {
     ParentProfileDetails = doc.data();
-    
+
       const parentPost = query(collection(db, "events"));
        getDocs(parentPost).then( (snapshot) => {
-        
+
            snapshot.forEach((doc) => {
               if(doc.data().parent_id === CurrentParentPostIndex) {
                 ParentProfileDetails = {
@@ -40,18 +37,13 @@ async function getParentPostDetails() {
                       ...doc.data(),
                   }
               }
-          });
+          });ParentProfileDetails
           fetch_data();
       });
-      
   });
- 
 }
 
-
-
 //fetch_data();
-
 function fetch_data()
 {
   parent_details = null;
@@ -70,7 +62,7 @@ function fetch_data()
   endDateOutput.innerHTML=ParentProfileDetails.end_date;
   descriptionOutput.innerHTML=ParentProfileDetails.description;
   let calendar_days= ParentProfileDetails.schedule;
-  
+
   //Render schedule
   if(calendar_days!=null)
   {
@@ -82,8 +74,6 @@ function fetch_data()
     }
   }
 }
-
-
 //Ratings................................................................//
 
 //Display the ratings
@@ -102,8 +92,6 @@ function displayRating(){
     }
 }
 
-
-
 //function to set the ratings color on click
 function check_ratings(RatingStars)
 {
@@ -116,13 +104,13 @@ function check_ratings(RatingStars)
       ratingCountDisplay.style.display='none';
       if(star.className == RatingInactive)
         {
-            for (let i = 0; i <=index; i++) 
+            for (let i = 0; i <=index; i++)
             RatingStars[i].className = RatingActive;
             flagRatingsChecked = true;
             //calculateRating(index);
         }
       else{
-          for (let i = 0; i <=4; i++) 
+          for (let i = 0; i <=4; i++)
           RatingStars[i].className = RatingInactive;
           flagRatingsChecked = false;
         }
@@ -170,14 +158,14 @@ submitRatings.addEventListener('click', () => {
  else{
    alert("Your rating for this user is already saved");
  }
- 
+
 });
 
 cancelRatings.addEventListener('click', () => {
  displayRating();
 });
 
-//...................................................End Ratings.........//
+//..............End Ratings.........//
 
 function reset_color()
 {
@@ -187,7 +175,7 @@ function reset_color()
       li.style.backgroundColor = "rgba(224, 224, 224, 1)";
       li.style.color = "rgba(0, 0, 0, 1)";
     }
-  for (let i = 0; i <5; i++) 
+  for (let i = 0; i <5; i++)
     RatingStars[i].className = RatingInactive;
 }
 
@@ -220,8 +208,29 @@ contact.addEventListener("click", () => {
     contactShowFlag=false;
   }
 });
+const calculateButton = document.querySelector(".calcBtn");
 
+calculateButton.addEventListener("click", () => {
+    calculatePayment(ParentProfileDetails.schedule.length, ParentProfileDetails.pay_rate);
+    console.log("profile " + JSON.stringify(ParentProfileDetails));
+});
+
+function calculatePayment(days, payRate) {
+    const duration = document.querySelector("#job-duration").value;
+    const hours = document.querySelector(".hours").value;
+    const output = document.querySelector(".total-output");
+
+    const wage = (days * duration) * payRate * hours;
+    const GST =(wage * 0.05);
+    const PST = (wage * 0.07);
+
+    const total = (wage + GST + PST).toFixed(2);
+    output.innerHTML = `
+    <ul> 
+        <li>The total is CAD${total}.</li>
+        <li>GST is CAD${Math.ceil(GST)}</li>
+        <li>PST is CAD${Math.ceil(PST)}</li>
+    </ul>`
+}
 
 getParentPostDetails();
-
-
