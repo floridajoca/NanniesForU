@@ -13,7 +13,6 @@ export function userTypeValidation(){
     links.append(menuItem3);
 
     if(sessionStorage.getItem('LoginId')) {
-        console.log(sessionStorage.getItem('LoginId'));
         if(sessionStorage.getItem('User_Type') == 'Parent')
         {
             console.log(sessionStorage.getItem('User_Type'),links);
@@ -26,7 +25,6 @@ export function userTypeValidation(){
         }
         else if(sessionStorage.getItem('User_Type') == 'Nanny')
         {
-            console.log(sessionStorage.getItem('User_Type'),links);
             const menuItem4 = document.createElement( "li" );
             menuItem4.innerHTML = '<a href="#parentjobpost">Job Posts</a>';
             links.append(menuItem4);

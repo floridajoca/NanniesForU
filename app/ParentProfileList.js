@@ -17,13 +17,12 @@ async function getParents() {
         const posts = await getParentJobPosts();
         snapshot.docs.forEach((doc) => {
             if (posts[doc.id] !== undefined) {
-                console.log(doc.id);
                 renderParent(doc.id, doc.data(), posts[doc.id].pay_rate, posts[doc.id].looking_for || 'my kids', posts[doc.id].schedule);
                 Parents.push({
                     name: doc.data().full_name,
                     geolocation: {
-                        lat: doc.data().location.latitude,
-                        lng: doc.data().location.longitude,
+                        lat: doc.data().location.lat,
+                        lng: doc.data().location.lng,
                     }
                 })
             }
@@ -50,10 +49,10 @@ function renderParent(id, Parent, pay_rate, looking_for,schedule) {
                 <img src="https://picsum.photos/40/40" alt="">
             </div>
             <div class="profile-details">
-                <p>${Parent.full_name}</p>
+                <h4>${Parent.full_name}</h4>
                 <p>Location: <span>${Parent.city} </span></p>
                 <p>For: <span>${looking_for}</span></p>
-                <p>Pay rate:<span>${pay_rate}</span></p>
+                <p>Pay rate:<span>${pay_rate} CAD/hr</span></p>
                 <div class="schedule-display-main">
                     <h4>When:</h4>
                     <ul id="${id}scheduleOutput" class="schedule-display-list">
@@ -95,15 +94,10 @@ function renderButtonId() {
         if (pid !== null)
         {
             pid.addEventListener('click', () => {
-                if (!sessionStorage.getItem('LoginId')) {
-                    alert("you should be logged in to learn more!");
-                }
-                else {
                     JobPostData = doc;
                     sessionStorage.setItem("CurrentParentPostIndex", doc.parent_id);
                     console.log(sessionStorage.getItem("CurrentParentPostIndex"));
                     location.replace("#parentjobpost");
-                }
             });
         }
         else {

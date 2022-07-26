@@ -4,6 +4,18 @@
         <h2>Job Details</h2>
         <img src="https://picsum.photos/800/200?rand=111" alt="">
         <div class="job-post-details">
+            <div class="reviews-display">
+                <ul id="reviewsDisplay">
+                    <li id="rating1"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li id="rating2"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li id="rating3"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li id="rating4"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li id="rating5"><i class="fa-solid fa-star rating-inactive"></i></li>
+                </ul>
+                <button id="submitRatings" class="ratings-button" aria-label="submit ratings">Submit</button>
+                <button id="cancelRatings" class="ratings-button" aria-label="cancel ratings">Cancel</button>
+                <p id="ratingCountDisplay"></p>
+            </div>
             <div class="name-display">
                 <h4>Name: </h4>
                 <p id="parentNameOutput"></p>
@@ -37,19 +49,7 @@
                 <h4>End Date:</h4>
                 <p id="endDateOutput"></p>
             </div>
-            <div class="reviews-display">
-                <h4>Reviews:</h4>
-                <ul id="reviewsDisplay">
-                    <li id="rating1"><i class="fa-solid fa-star rating-inactive"></i></li>
-                    <li id="rating2"><i class="fa-solid fa-star rating-inactive"></i></li>
-                    <li id="rating3"><i class="fa-solid fa-star rating-inactive"></i></li>
-                    <li id="rating4"><i class="fa-solid fa-star rating-inactive"></i></li>
-                    <li id="rating5"><i class="fa-solid fa-star rating-inactive"></i></li>
-                </ul>
-                <button id="submitRatings" class="ratings-button" aria-label="submit ratings">Submit</button>
-                <button id="cancelRatings" class="ratings-button" aria-label="cancel ratings">Cancel</button>
-                <p id="ratingCountDisplay"></p>
-            </div>
+            
             
         </div>
         <div class="description-display">
@@ -57,9 +57,23 @@
             <p id="descriptionOutput"></p>
         </div>
         <div class="job-details-buttons">
-            <button>Contact Info</button>
-            <button>See Reviews</button>
+            <button id="contactBtn"> Contact Info: </button>
+            <div class="contact-info"></div>
         </div>
+        <div class="calculation">
+            <h2>Pay Calculation</h2>
+            <form id="calculate">
+                <label for="duration">Duration </label>
+                <input type="number" name="duration" id="duration" placeholder="duration">
+                <label for="period">Period</label>
+                <input type="number" name="period" id="period" placeholder="Period">
+                <label for="rate">Pay rate</label>
+                <input type="number" name="rate" id="rate" placeholder="Pay rate">
+                <button id="calcBtn" type="submit">Calculate</button>
+            </form>
+        </div>
+        
+
     </div>
     <!-- <div class="navigation-button">
         <button id="prev">&lt; Previous</button>

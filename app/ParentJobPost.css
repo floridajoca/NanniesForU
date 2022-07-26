@@ -6,8 +6,12 @@
     padding: 1rem;    
 }
 .job-details-main img{
-    max-width: 100%;
-    height: auto;
+    width: 235px;
+    height: 235px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .job-details-main h2{
@@ -32,7 +36,7 @@
     flex: 1 0 50%;
 } */
 
- .fa-star{
+.fa-star{
     color: grey;
 }
 
@@ -55,12 +59,23 @@ ul#reviewsDisplay > * {
     display: none;
 }
 
+.ratings-button{
+    border-radius: 20px;
+    padding: 0.25rem;
+    color: white;
+    background-color: #FF435B;
+    margin-right: 1rem;
+    font-size: 21px;
+}
+
+
 .job-details-buttons button{
     border-radius: 40px;
     padding: 1rem 2rem;
     color: white;
-    background-color: grey;
+    background-color: #FF435B;
     margin-right: 2rem;
+    font-size: 21px;
 }
 .navigation-button{
     display: flex;
@@ -94,54 +109,51 @@ ul.schedule-display-list {
 }
 
 
+
+.calculation{
+    flex: 1 0 100%;
+}
+
 /* ______________END MAIN______________ */
 
 @media screen and (min-width: 700px ) {
     
 
-/* ..........MAIN........ */
-.job-details-main{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    gap: 2rem;
-}
+    /* ..........MAIN........ */
+    .job-details-main{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
 
-.job-details-container{
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
+    .job-details-container{
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-.job-details-main h2{
-    flex: 1 0 100%;
-    /* justify-self: start; */
-}
+    .job-details-main h2{
+        flex: 1 0 100%;
+        /* justify-self: start; */
+    }
 
-.job-details-main img{
-    flex: 0 0 30%;
-    width: 20%;
-    height: auto;
-}
+    .job-details-main img{
+        flex: 0 0 30%;
+        width: 20%;
+        height: auto;
+    }
 
-.job-post-details{
-    flex: 0 0 60%;
-}
-.description-display{
-    flex: 1 0 100%;
-}
+    .job-post-details{
+        flex: 0 0 60%;
+    }
+    .description-display{
+        flex: 1 0 100%;
+    }
 
-/* .job-post-details * *{
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-} */
-
-/* .job-post-details * *{
-    flex: 1 0 30%;
-} */
-/*..........END MAIN.......... */
-
-
-
+    ul.contact-info-details{
+        list-style-type: none;
+        padding: 2rem 0 0 0;margin: 0;
+        font-size: 1.25rem;
+    }
 }

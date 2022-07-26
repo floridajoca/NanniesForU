@@ -1,13 +1,35 @@
 <main>
     <h1>Nanny Profile</h1>
     <div class="nanny-details-wrapper">
-    <img id="nanny-profile" src="https://picsum.photos/300/300">
+        <img id="nanny-profile" src="https://picsum.photos/300/300">
+        <div class="reviews-display">
+            <ul id="reviewsDisplay">
+                <li id="rating1"><i class="fa-solid fa-star rating-inactive"></i></li>
+                <li id="rating2"><i class="fa-solid fa-star rating-inactive"></i></li>
+                <li id="rating3"><i class="fa-solid fa-star rating-inactive"></i></li>
+                <li id="rating4"><i class="fa-solid fa-star rating-inactive"></i></li>
+                <li id="rating5"><i class="fa-solid fa-star rating-inactive"></i></li>
+            </ul>
+            <button id="submitRatings" class="ratings-button" aria-label="submit ratings">Submit</button>
+            <button id="cancelRatings" class="ratings-button" aria-label="cancel ratings">Cancel</button>
+            <p id="ratingCountDisplay"></p>
+        </div>
         <p id="nanny-name">Name: </p>
         <p id="nanny-location">Location: </p>
         <p id="nanny-rate">Hourly Rate: </p>
 
-        <p id="nanny-availability">Availability: </p>
-        <p id="nanny-reviews">Reviews: </p>
+        <div class="schedule-display">
+            <h4>When:</h4>
+            <ul id="scheduleOutput" class="schedule-display-list">
+                <li id="sunday">S</li>
+                <li id="monday">M</li>
+                <li id="tuesday">T</li>
+                <li id="wednesday">W</li>
+                <li id="thursday">T</li>
+                <li id="friday">F</li>
+                <li id="saturday">S</li>
+            </ul>
+        </div>
         <p id="nanny-description">Description: </p>
         <button id="contactBtn"> Contact Info: </button>
         <div class="contact-info"></div>
