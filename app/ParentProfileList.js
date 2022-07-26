@@ -21,8 +21,8 @@ async function getParents() {
                 Parents.push({
                     name: doc.data().full_name,
                     geolocation: {
-                        lat: doc.data().location.latitude,
-                        lng: doc.data().location.longitude,
+                        lat: doc.data().location.lat,
+                        lng: doc.data().location.lng,
                     }
                 })
             }

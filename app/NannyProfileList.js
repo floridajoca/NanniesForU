@@ -14,8 +14,8 @@ async function getNannies() {
               {
                   name: doc.data().full_name,
                   geolocation: {
-                    lat: doc.data().location.latitude,
-                    lng: doc.data().location.longitude,
+                    lat: doc.data().location.lat,
+                    lng: doc.data().location.lng,
                   }
             });
         });
@@ -52,6 +52,7 @@ function renderNanny(id, nanny, payrate) {
 }
 
 const currentUserLocation = JSON.parse(sessionStorage.getItem("location"));
+console.log("here", JSON.stringify(JSON.parse(sessionStorage.getItem("location"))))
 
 let map = tt.map({
     key: API_KEY,
