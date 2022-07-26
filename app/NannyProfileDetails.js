@@ -46,17 +46,13 @@ function renderNannyDetails() {
     const nannyLocation = document.querySelector("#nanny-location");
     const nannyDescription = document.querySelector("#nanny-description");
     const nannyRate = document.querySelector("#nanny-rate");
-    const nannyAvailability =  document.querySelector("#nanny-availability");
     let calendar_days= NannyProfileDetails.schedule;
-    //const nannyReviews =  document.querySelector("#nanny-reviews");
 
     nannyName.innerHTML += NannyProfileDetails.full_name;
     nannyLocation.innerHTML += NannyProfileDetails.city;
     nannyDescription.innerHTML += NannyProfileDetails.description ? NannyProfileDetails.description : "";
     nannyRate.innerHTML += NannyProfileDetails.payrate;
-    //nannyAvailability.innerHTML += NannyProfileDetails.schedule;
-    
-    //nannyReviews.innerHTML += NannyProfileDetails.ratings;
+
     ratingHistory = false; //reset rating history flag on new profile load
     check_ratings(RatingStars);
     stars = NannyProfileDetails.ratings.stars;
@@ -73,8 +69,6 @@ function renderNannyDetails() {
         }
     }
 }
-
-
 
 const contact = document.querySelector("#contactBtn");
 const contactWrapper = document.querySelector(".contact-info");
@@ -123,9 +117,7 @@ function displayRating(){
           RatingStars[i].className = RatingInactive;
       }
   }
-  
-  
-  
+
   //function to set the ratings color on click
   function check_ratings(RatingStars)
   {
@@ -138,31 +130,30 @@ function displayRating(){
         ratingCountDisplay.style.display='none';
         if(star.className == RatingInactive)
           {
-              for (let i = 0; i <=index; i++) 
+              for (let i = 0; i <=index; i++)
               RatingStars[i].className = RatingActive;
               flagRatingsChecked = true;
               //calculateRating(index);
           }
         else{
-            for (let i = 0; i <=4; i++) 
+            for (let i = 0; i <=4; i++)
             RatingStars[i].className = RatingInactive;
             flagRatingsChecked = false;
           }
         }
     });
   }
-  
-  
+
   function calculateRating(){
-  
+
     stars = ((stars*count+(index+1))/(count+1)).toFixed(4);
     count = count + 1;
     setRatingsData(count, stars);
   }
-  
+
   //function to save the ratings on submit
   async function setRatingsData(setCount, setStars){
-  
+
     const setRatings = doc(db, "user", selectedNannyId);
     await updateDoc(setRatings, {ratings:
       {
@@ -174,10 +165,10 @@ function displayRating(){
       });
     //location.reload();
   }
-  
+
   submitRatings.addEventListener('click', () => {
-    if(ratingHistory==false){
-     if(flagRatingsChecked==true)
+    if(ratingHistory===false){
+     if(flagRatingsChecked===true)
      {
        calculateRating();
        //fetch_data();
@@ -192,14 +183,40 @@ function displayRating(){
    else{
      alert("Your rating for this user is already saved");
    }
-   
   });
-  
+
   cancelRatings.addEventListener('click', () => {
    displayRating();
   });
-  
-  //...................................................End Ratings.........//
-  
 
-  getNannyDetails();
+  //..........End Ratings.........//
+
+ const calculateButton = document.querySelector(".calcBtn");
+
+ calculateButton.addEventListener("click", () => {
+    if(!NannyProfileDetails.schedule || NannyProfileDetails.schedule.length < -1) {
+        alert("This nanny is not available this week!")
+    } else {
+        calculatePayment(NannyProfileDetails.schedule.length, NannyProfileDetails.payrate);
+    }
+ });
+
+function calculatePayment(days, payRate) {
+ const duration = document.querySelector("#duration").value;
+ const hours = document.querySelector(".hours").value;
+ const output = document.querySelector(".total-output");
+
+    const wage = (days * duration) * payRate * hours;
+    const GST =(wage * 0.05);
+    const PST = (wage * 0.07);
+
+    const total = (wage + GST + PST).toFixed(2);
+    output.innerHTML = `
+    <ul> 
+        <li>The total is CAD${total}.</li>
+        <li>GST is CAD${Math.ceil(GST)}</li>
+        <li>PST is CAD${Math.ceil(PST)}</li>
+    </ul>`
+}
+
+getNannyDetails();

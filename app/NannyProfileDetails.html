@@ -36,18 +36,13 @@
     </div>
     <div class="calculation">
         <h2>Pay Calculation</h2>
-        <form id="calculate">
-            <label for="duration">Duration </label>
+        <form class="calculate">
+            <label for="duration">Duration in weeks</label>
             <input type="number" name="duration" id="duration" placeholder="duration">
-            <label for="period">Period</label>
-            <input type="number" name="period" id="period" placeholder="Period">
-            <label for="rate">Pay rate</label>
-            <input type="number" name="rate" id="rate" placeholder="Pay rate">
-            <button id="calcBtn" type="submit">Calculate</button>
+            <label for="hours">Hours</label>
+            <input type="number" name="hours" class="hours" id="hours" placeholder="Hours">
+            <button class="calcBtn" type="button">Calculate</button>
         </form>
-    </div>
-
-    <div class="nearby-nannies">
-
+        <div class="total-output"></div>
     </div>
 </main>
