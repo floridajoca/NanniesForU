@@ -52,14 +52,30 @@ function renderNanny(id, nanny, payrate) {
 }
 
 const currentUserLocation = JSON.parse(sessionStorage.getItem("location"));
-console.log("here", JSON.stringify(JSON.parse(sessionStorage.getItem("location"))))
+console.log("here", JSON.stringify(JSON.parse(sessionStorage.getItem("location"))));
+var currentUserSearchLocation=sessionStorage.getItem("searchPosition");
+
+var setLocation;
+setCurrentCenter();
+
+function setCurrentCenter(){
+    if(sessionStorage.getItem("searchPosition")!=null)
+    {
+        currentUserSearchLocation = JSON.parse(sessionStorage.getItem("searchPosition"));
+        setLocation = currentUserSearchLocation;
+    }
+    else{
+        setLocation = currentUserLocation;
+    }
+}
 
 let map = tt.map({
     key: API_KEY,
     container: 'map-div',
-    center: currentUserLocation,
+    center: setLocation,
     zoom: 12
 });
+
 
 const currentUserMarker = new tt.Marker().setLngLat(currentUserLocation).addTo(map);
 const currentUserPopup = new tt.Popup({ anchor: 'top' }).setText('Me')
