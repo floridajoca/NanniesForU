@@ -17,6 +17,7 @@
     <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps.css'>
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"></script>
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/services/services-web.min.js"></script>
+    <link rel="manifest" href="app.webmanifest">
     <title>Nannies For You</title>
 </head>
 
@@ -136,6 +137,17 @@
         </div>
     </footer>
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(function (reg) {
+                    console.log(`Service Worker Registration`);
+                })
+                .catch(function (error) {
+                    console.log(`Service Worker Error (${error})`);
+                });
+        }
+    </script>
 </body>
 
 </html>
