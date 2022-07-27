@@ -190,4 +190,6 @@ ul.schedule-display-list {
     
 }
 
-#map-div { width: 40rem; height: 45rem; }
+#map-div { 
+    width: 100%; height: 45rem; 
+}
