@@ -5,7 +5,6 @@ import { collection, query, where, getDocs } from "https://www.gstatic.com/fireb
 export var JobPostData;
 
 const Parents = [];
-const JobListWrapper = document.querySelector(".parent-profile-list-wrapper");
 let JobPostSnapshot = [];
 let RatingStars ;
 const RatingActive= "fa-solid fa-star rating-active";
@@ -79,7 +78,7 @@ function renderParent(id, Parent, pay_rate, looking_for,schedule) {
 
     let calendar_days= schedule; //get schedule values from event
     let ScheduleDisplayID = document.getElementById(id+"scheduleOutput");
-    let ScheduleListElements = [...ScheduleDisplayID.getElementsByTagName("li")];
+    //let ScheduleListElements = [...ScheduleDisplayID.getElementsByTagName("li")];
     renderSchedule(ScheduleDisplayID,calendar_days);
 
     let RatingCountDisplayID = document.getElementById(id+"reviewsDisplay");
@@ -97,7 +96,7 @@ function renderButtonId() {
                     JobPostData = doc;
                     sessionStorage.setItem("CurrentParentPostIndex", doc.parent_id);
                     console.log(sessionStorage.getItem("CurrentParentPostIndex"));
-                    location.replace("#parentjobpost");
+                    location.assign("#parentjobpost");
             });
         }
         else {
@@ -108,7 +107,7 @@ function renderButtonId() {
 
 function renderRatings(ratings,RatingStars){
     let starsDisplay = parseFloat(ratings.stars).toFixed(2);
-    let count=ratings.count;
+    //let count=ratings.count;
       for (let i = 0; i<5; i++)
       {
        if(i<parseInt(starsDisplay)){
@@ -137,22 +136,41 @@ function renderSchedule(ScheduleDisplayID,calendar_days)
 init();
 
 async function init() {
+
     await getParents();
     renderButtonId();
 };
 
 const currentUserLocation = JSON.parse(sessionStorage.getItem("location"));
+var currentUserSearchLocation=sessionStorage.getItem("searchPosition");
+
+var setLocation;
+setCurrentCenter();
+
+function setCurrentCenter(){
+    if(sessionStorage.getItem("searchPosition")!=null)
+    {
+        currentUserSearchLocation = JSON.parse(sessionStorage.getItem("searchPosition"));
+        setLocation = currentUserSearchLocation;
+    }
+    else{
+        setLocation = currentUserLocation;
+    }
+}
+
+
 
 let map = tt.map({
     key: API_KEY,
     container: 'map-div',
-    center: currentUserLocation,
+    center: setLocation,
     zoom: 12
 });
 
 const currentUserMarker = new tt.Marker().setLngLat(currentUserLocation).addTo(map);
 const currentUserPopup = new tt.Popup({ anchor: 'top' }).setText('Me')
 currentUserMarker.setPopup(currentUserPopup).togglePopup();
+
 
 function addParentsMarkers() {
     Parents.forEach(function (child) {

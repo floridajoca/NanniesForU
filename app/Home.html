@@ -2,18 +2,21 @@
     <div class="first-section">
         <p class="first-section-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur iusto labore harum!</p>
         <form class="search-form">
-            <input class="search-input" type="text" placeholder="Search.." name="search2">
-            <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
+            
+            <!-- <input class="search-input" type="text" id="#searchText" placeholder="Search by location.." name="search2">
+            <i class="fa fa-search"></i></button> -->
         </form>
+        
         <div class="main-button-radio">
             <div class="radio-button">
-                <input type="radio" class="inputButton">
-                <label for="" class="InputLabel">Search Job as Nanny</label>
+                <input type="radio" class="inputButton" name="search-button-select" value="nanny-search" checked>
+                <label for="parent-search" class="InputLabel">Find Nanny</label>
             </div>
             <div class="radio-button">
-                <input type="radio" class="inputButton">
-                <label for="" class="InputLabel">Search Nanny</label>
+                <input type="radio" class="inputButton" name="search-button-select" value="job-search">
+                <label for="nanny-search" class="InputLabel">Search Job as Nanny</label>
             </div>
+            
         </div>
     </div>
     <div class="second-section">
