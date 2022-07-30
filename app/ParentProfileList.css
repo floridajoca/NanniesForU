@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url("https://use.typekit.net/nio8yxa.css");
+
+
 /* .parent-profile {
     border: 1px solid grey;
     display: flex;
@@ -11,11 +15,11 @@
     margin-bottom: 2rem;
 }
 
-.parent-profile img {
+ */
+img {
     max-width: 100%;
     height: auto;
-} */
-
+}
 
 
 .more-info {
@@ -104,6 +108,7 @@ ul.schedule-display-list {
     border-radius: 22px;
     width: 578px;
     height: 292px;
+    
     background-color: rgba(16, 75, 158, 0.1);
     display: flex;
     flex-flow: row nowrap;
@@ -112,6 +117,7 @@ ul.schedule-display-list {
 .Parent-profile .profile-image{
     flex: 1 0 40%;
     align-self: flex-start;
+    overflow: hidden;
 }
 
 .Parent-profile .profile-details{
@@ -123,6 +129,7 @@ ul.schedule-display-list {
     height: 292px;
     border-top-left-radius: 22px;
     border-bottom-left-radius: 22px;
+    object-fit: cover;
 }
 
 

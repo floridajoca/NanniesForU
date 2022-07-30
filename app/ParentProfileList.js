@@ -2,8 +2,6 @@
 import { db } from "../firebase.js"
 import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
 
-export var JobPostData;
-
 const Parents = [];
 let JobPostSnapshot = [];
 let RatingStars ;
@@ -45,7 +43,7 @@ function renderParent(id, Parent, pay_rate, looking_for,schedule) {
     document.querySelector(".parent-profile-list-wrapper").innerHTML += `
         <div class="Parent-profile" id="${id}-parent-profile">
             <div class="profile-image">
-                <img src="https://picsum.photos/40/40" alt="">
+                <img src="${Parent.image}" alt="">
             </div>
             <div class="profile-details">
                 <h4>${Parent.full_name}</h4>
@@ -93,7 +91,6 @@ function renderButtonId() {
         if (pid !== null)
         {
             pid.addEventListener('click', () => {
-                    JobPostData = doc;
                     sessionStorage.setItem("CurrentParentPostIndex", doc.parent_id);
                     console.log(sessionStorage.getItem("CurrentParentPostIndex"));
                     location.assign("#parentjobpost");

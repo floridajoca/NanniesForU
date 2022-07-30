@@ -24,7 +24,8 @@ body {
     text-align: center;
     margin: 0;
     padding: 2%;
-    background-color: rgb(217, 217, 217);
+    background-color:#2CAB80;
+    color: white;
 }
 
 .main-heading {
@@ -78,9 +79,7 @@ body {
     /* background-color: rgba(0, 0, 0, .5); */
 }
 
-.dropdown {
-    background-color: rgba(0, 0, 0, .8);
-}
+
 
 .ul-li-header {
     padding: 10px;
@@ -154,9 +153,11 @@ body {
 }
 
 .mobile-nav {
-    display: flex;
-    justify-content: space-between;
+    flex: 1 0 20%;
     align-items: center;
+}
+.dropdown{
+    flex: 1 0 80%;
 }
 
 .menu-button {
@@ -181,10 +182,26 @@ body {
     align-items: center;
 }
 
-.profile-image {
+/* .profile-image {
     width: 40%;
     border-radius: 50%;
+} */
+
+.site-links-top ul{
+    list-style-type: none;
+    display: flex;
+    gap: 0.1rem;
 }
+
+
+.site-links-top li{
+    flex-grow: 1;
+    padding: 0.25rem;
+}
+.site-links-top a{
+    text-decoration: none;
+}
+
 
 .profile-div {
     margin: 0;
@@ -351,6 +368,8 @@ body {
     }
     .main-navbar {
         display: flex;
+        align-items: center;
+        padding: 1rem;
     }
     .menu-ul {
         display: flex;

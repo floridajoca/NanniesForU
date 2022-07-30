@@ -1,51 +1,54 @@
-<main>
-    <h1>Nanny Profile</h1>
-    <div class="nanny-profile-wrapper">
-        <div class="nanny-details-wrapper">
-            <img id="nanny-profile" src="https://picsum.photos/300/300">
-            <p id="nanny-name"><span class="title">Name:</span> </p>
-            <p id="nanny-location"><span class="title">Location:</span> </p>
-            <p id="nanny-rate"><span class="title">Hourly Rate:</span> </p>
-            <div class="schedule-display">
-                <h4><span class="title">Availibility:</span></h4>
-                <ul id="scheduleOutput" class="schedule-display-list">
-                    <li id="sunday">S</li>
-                    <li id="monday">M</li>
-                    <li id="tuesday">T</li>
-                    <li id="wednesday">W</li>
-                    <li id="thursday">T</li>
-                    <li id="friday">F</li>
-                    <li id="saturday">S</li>
-                </ul>
-            </div>
-            <p id="nanny-description"><span class="title">Description:</span> </p>
-            <div class="reviews-display">
-                <ul id="reviewsDisplay">
-                    <li id="rating1"><i class="fa-solid fa-star rating-inactive"></i></li>
-                    <li id="rating2"><i class="fa-solid fa-star rating-inactive"></i></li>
-                    <li id="rating3"><i class="fa-solid fa-star rating-inactive"></i></li>
-                    <li id="rating4"><i class="fa-solid fa-star rating-inactive"></i></li>
-                    <li id="rating5"><i class="fa-solid fa-star rating-inactive"></i></li>
-                </ul>
-                <div class="btns-wrapper">
-                    <button id="submitRatings" class="ratings-button" aria-label="submit ratings">Submit</button>
-                    <button id="cancelRatings" class="cancel-button" aria-label="cancel ratings">Cancel</button>
+    <main>
+    
+        <h1>Nanny Profile</h1>
+    
+        <div class="nanny-profile-wrapper">
+    
+            <div class="nanny-details-wrapper">
+                <img id="nannyProfileImage" src="https://picsum.photos/300/300">
+                <p id="nanny-name"><span class="title">Name:</span> </p>
+                <p id="nanny-location"><span class="title">Location:</span> </p>
+                <p id="nanny-rate"><span class="title">Hourly Rate:</span> </p>
+                <div class="schedule-display">
+                    <h4><span class="title">Availibility:</span></h4>
+                    <ul id="scheduleOutput" class="schedule-display-list">
+                        <li id="sunday">S</li>
+                        <li id="monday">M</li>
+                        <li id="tuesday">T</li>
+                        <li id="wednesday">W</li>
+                        <li id="thursday">T</li>
+                        <li id="friday">F</li>
+                        <li id="saturday">S</li>
+                    </ul>
                 </div>
-                <p id="ratingCountDisplay"></p>
+                <p id="nanny-description"><span class="title">Description:</span> </p>
+                <div class="reviews-display">
+                    <ul id="reviewsDisplay">
+                        <li id="rating1"><i class="fa-solid fa-star rating-inactive"></i></li>
+                        <li id="rating2"><i class="fa-solid fa-star rating-inactive"></i></li>
+                        <li id="rating3"><i class="fa-solid fa-star rating-inactive"></i></li>
+                        <li id="rating4"><i class="fa-solid fa-star rating-inactive"></i></li>
+                        <li id="rating5"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    </ul>
+                    <div class="btns-wrapper">
+                        <button id="submitRatings" class="ratings-button" aria-label="submit ratings">Submit</button>
+                        <button id="cancelRatings" class="cancel-button" aria-label="cancel ratings">Cancel</button>
+                    </div>
+                    <p id="ratingCountDisplay"></p>
+                </div>
+                <button id="contactBtn"> Contact Info</button>
+                <div class="contact-info"></div>
             </div>
-            <button id="contactBtn"> Contact Info</button>
-            <div class="contact-info"></div>
+            <div class="calculation">
+                <h2>Pay Calculation</h2>
+                <form class="calculate">
+                    <label for="duration">Duration in weeks</label>
+                    <input type="number" name="duration" id="duration" placeholder="Duration">
+                    <label for="hours">Hours</label>
+                    <input type="number" name="hours" class="hours" id="hours" placeholder="Hours">
+                    <button class="calcBtn" type="button">Calculate</button>
+                </form>
+                <div class="total-output"></div>
+            </div>
         </div>
-        <div class="calculation">
-            <h2>Pay Calculation</h2>
-            <form class="calculate">
-                <label for="duration">Duration in weeks</label>
-                <input type="number" name="duration" id="duration" placeholder="Duration">
-                <label for="hours">Hours</label>
-                <input type="number" name="hours" class="hours" id="hours" placeholder="Hours">
-                <button class="calcBtn" type="button">Calculate</button>
-            </form>
-            <div class="total-output"></div>
-        </div>
-    </div>
-</main>
+    </main>
