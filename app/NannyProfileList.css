@@ -1,14 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url("https://use.typekit.net/nio8yxa.css");
+
+main {
+    font-family: new-atten;
+}
+
 .nanny-profile {
     border: 1px solid grey;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    max-width: 200px;
+    width: 160px;
     margin: auto;
     padding: 1rem;
     border-radius: .5rem;
     background-color: rgba(16, 75, 158, .1);
     margin-bottom: 2rem;
+}
+
+.nanny-profile h3 {
+    font-family: new-atten, sans-serif;
+    text-transform: uppercase;
+    margin: 12px;
+}
+
+.nanny-profile p {
+    font-family: new-atten, sans-serif;
+    text-transform: capitalize;
+    margin: 10px;
 }
 
 .nanny-profile img {
@@ -20,16 +39,37 @@
     -webkit-appearance: none;
     appearance: none;
     border-radius: 2rem;
-    padding: .5rem;
+    padding: 0.4rem 1.1rem;
     color: #104B9E;
     background-color: rgba(16, 75, 158, 0);
     border: 1px solid rgb(16, 75, 158);
 }
+
 .more-info:hover {
-    border-radius: 2rem;
-    padding: .5rem;
     color: white;
     background-color: rgb(16, 75, 158);
 }
 
-#map-div { width: 100%; height: 45rem; }
+#map-div {
+    width: 100%;
+    height: 45rem;
+}
+
+.nanny-profile-list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media screen and (min-width: 900px) {
+    .nanny-profile-list-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 700px;
+        gap: 1rem;
+        justify-content: center;
+    }
+}
