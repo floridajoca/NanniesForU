@@ -11,6 +11,7 @@ const RatingActive = "fa-solid fa-star rating-active";
 const RatingInactive = "fa-solid fa-star rating-inactive";
 const submitRatings = document.getElementById('submitRatings');
 const cancelRatings = document.getElementById('cancelRatings');
+const btnsWrapper = document.getElementById("btns-wrapper");
 let index = 0; //RatingIndex
 let stars;
 let count;
@@ -105,8 +106,8 @@ contact.addEventListener("click", () => {
 
 //Display the ratings
 function displayRating() {
-  submitRatings.style.display = 'none';
-  cancelRatings.style.display = 'none';
+  btnsWrapper.style.display = 'none';
+  // cancelRatings.style.display = 'none';
   ratingCountDisplay.style.display = 'inline-block';
   let starsDisplay = parseFloat(stars).toFixed(2);
   ratingCountDisplay.innerHTML = starsDisplay + ' / ' + count + ' users';
@@ -124,8 +125,8 @@ function check_ratings(RatingStars) {
     star.onclick = () => {
       index = RatingStars.indexOf(star);
       console.log(index);
-      submitRatings.style.display = 'block';
-      cancelRatings.style.display = 'block';
+      btnsWrapper.style.display = 'flex';
+      //cancelRatings.style.display = 'block';
       ratingCountDisplay.style.display = 'none';
       if (star.className == RatingInactive) {
         for (let i = 0; i <= index; i++)

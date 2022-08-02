@@ -30,25 +30,28 @@
                         <li id="rating4"><i class="fa-solid fa-star rating-inactive"></i></li>
                         <li id="rating5"><i class="fa-solid fa-star rating-inactive"></i></li>
                     </ul>
-                    <div class="btns-wrapper">
+                    <p id="ratingCountDisplay"></p>
+                    <div id="btns-wrapper">
                         <button id="submitRatings" class="ratings-button" aria-label="submit ratings">Submit</button>
                         <button id="cancelRatings" class="cancel-button" aria-label="cancel ratings">Cancel</button>
                     </div>
-                    <p id="ratingCountDisplay"></p>
+                    
                 </div>
                 <button id="contactBtn"> Contact Info</button>
                 <div class="contact-info"></div>
             </div>
             <div class="calculation">
-                <h2>Pay Calculation</h2>
-                <form class="calculate">
-                    <label for="duration">Duration in weeks</label>
-                    <input type="number" name="duration" id="duration" placeholder="Duration">
-                    <label for="hours">Hours</label>
-                    <input type="number" name="hours" class="hours" id="hours" placeholder="Hours">
-                    <button class="calcBtn" type="button">Calculate</button>
-                </form>
-                <div class="total-output"></div>
+                <div class="calculation-box">
+                    <h2>Pay Calculation</h2>
+                    <form class="calculate">
+                        <label for="duration">Duration in weeks</label>
+                        <input type="number" name="duration" id="duration" placeholder="Duration">
+                        <label for="hours">Hours</label>
+                        <input type="number" name="hours" class="hours" id="hours" placeholder="Hours">
+                        <button class="calcBtn" type="button">Calculate</button>
+                    </form>
+                    <div class="total-output"></div>
+                </div>
             </div>
         </div>
     </main>
