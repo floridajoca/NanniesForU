@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url("https://use.typekit.net/nio8yxa.css");
+
+
+/* .parent-profile {
+    border: 1px solid grey;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    max-width: 200px;
+    margin: auto;
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: rgba(16, 75, 158, .1);
+    margin-bottom: 2rem;
+}
+
+ */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.more-info {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 42.5px;
+    /* padding: .5rem; */
+    width: 136px;
+    height: 39px;
+    color: #104B9E;
+    background-color: rgba(16, 75, 158, 0);
+    border: 2px solid rgb(16, 75, 158);
+}
+.more-info:hover {
+    border-radius: 2rem;
+    padding: .5rem;
+    color: white;
+    background-color: rgb(16, 75, 158);
+}
+
+
+/* Ratings.................. */
+
+.fa-star{
+    color: grey;
+}
+
+.rating-active{
+    color: gold;
+}
+
+
+ul.reviewsDisplay {
+    padding: 0;
+    margin: 0;
+
+}
+
+ul.reviewsDisplay > * {
+    padding: 1rem;
+    margin: 0;
+    display: inline-block;
+}
+
+.reviewsDisplay li{
+    padding: 0.20rem;
+}
+
+/* ...............end ratings */
+
+/* schedule display........... */
+
+.schedule-display-main{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.schedule-display-main .schedule-display-list{
+    flex: 1 0 80%;
+}
+
+ul.schedule-display-list {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.schedule-display-list li{
+    display: inline-block;
+    margin: 0.25rem;
+    padding:0.25rem;
+    width: 23px;
+    height: 23px;
+    background-color: rgba(224, 224, 224, 1);
+    border-radius: 50%;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* ...............end schedule */
+
+
+.Parent-profile{
+    border-radius: 22px;
+    width: 578px;
+    height: 292px;
+    
+    background-color: rgba(16, 75, 158, 0.1);
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.Parent-profile .profile-image{
+    flex: 1 0 40%;
+    align-self: flex-start;
+    overflow: hidden;
+}
+
+.Parent-profile .profile-details{
+    flex: 1 0 60%;
+}
+
+.Parent-profile .profile-image img{
+    width: 212px;
+    height: 292px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    object-fit: cover;
+}
+
+
+
+
+.parent-profile-list-wrapper {
+    display: grid;
+    grid-gap: 22px;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+
+.parent-profile-list-wrapper p,.parent-profile-list-wrapper h4{
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.profile-details > h4:nth-of-type(1){
+    margin-top: 1.15rem;
+    font-size: 1.5rem;
+}
+
+.parent-profile-list-wrapper p{
+    font-size: 1.25rem;
+}
+.parent-profile-list-main{
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+@media screen and (min-width: 1250px ) {
+
+   
+    .parent-profile-list-main{
+        display: block;
+        max-width: 1250px;
+        margin-right: auto;
+        margin-left: auto;
+        
+    }
+
+    .parent-profile-list-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Parent-profile .profile-image img{
+        width: 241px;
+        height: 310px;
+    }
+
+
+    .Parent-profile{
+        width: 620px;
+        height: 310px;
+        gap: 0.5rem;
+    }
+
+    .more-info {
+        margin-top: 0.75rem;
+    }
+
+    .profile-details > h4:nth-of-type(1){
+        margin-top: 1.5rem;
+    }
+    
+}
+
+#map-div { 
+    width: 100%; height: 45rem; 
+}

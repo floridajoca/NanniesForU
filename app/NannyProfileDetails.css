@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url("https://use.typekit.net/nio8yxa.css");
+
+
+.fa-star {
+    color: grey;
+}
+
+.rating-active {
+    color: gold;
+}
+
+
+ul#reviewsDisplay {
+    padding: 0;
+    margin: 0;
+
+}
+
+
+ul#reviewsDisplay li {
+    display: inline;
+}
+
+
+ul#reviewsDisplay>* {
+    padding: 1rem;
+    margin: 0;
+}
+
+
+#btns-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .6rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.ratings-button {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1.1rem;
+    color: white;
+    background-color: rgb(16, 75, 158);
+    border: 1px solid rgb(16, 75, 158);
+    margin-bottom: .5rem;
+}
+
+.ratings-button:hover {
+    background-color: rgba(16, 75, 158, 0.78);
+}
+
+.cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1.1rem;
+    color: rgb(16, 75, 158);
+    background-color: white;
+    border: 1px solid rgb(16, 75, 158);
+    margin-bottom: .5rem;
+}
+
+.submit-button {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1.1rem;
+    color: rgb(16, 75, 158);
+    background-color: white;
+    border: 1px solid rgb(16, 75, 158);
+    margin-bottom: .5rem;
+}
+
+#contactBtn {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    padding: 0.6rem 2rem;
+    color: white;
+    background-color: rgb(255, 67, 91);
+    border: 1px solid rgb(255, 67, 91);
+    margin-bottom: .5rem;
+}
+
+/* --schedule display-------------------------- */
+
+ul.schedule-display-list {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+}
+
+.schedule-display-list li {
+    display: inline-block;
+    margin: 0.25rem;
+    padding: 0.5rem;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(224, 224, 224, 1);
+    border-radius: 50%;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+/* -----------------------end schedule display-- */
+
+
+/*  */
+
+main {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: new-atten;
+}
+
+main h1 {
+    text-align: center;
+    font-family: "Fredoka One";
+    font-weight: 100;
+    color: #104B9E;
+}
+
+.nanny-profile-wrapper {
+    margin: 0 2rem;
+}
+
+#nanny-profile {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 12rem;
+}
+
+.nanny-details-wrapper p {
+    font-family: new-atten;
+    font-size: 1.2rem;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: new-atten, sans-serif;
+}
+
+.contact-info-details {
+    background-color: rgba(16, 75, 158, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.contact-info-details a {
+    text-decoration: none;
+    color: #104B9E;
+    font-size: 1.2rem;
+    font-family: new-atten;
+}
+
+
+.contact-info ul {
+    list-style-type: none;
+}
+
+.fa-phone,
+.fa-envelope {
+    color: #2CAB80;
+    font-size: 1.2rem;
+    padding-right: 6px;
+}
+
+.calculation {
+    background-color: rgba(255, 255, 255);
+
+}
+
+
+.calculation-box {
+    background-color: rgba(16, 75, 158, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+
+.calculate {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 350px;
+}
+
+.calculate input[type=number] {
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+}
+
+.calculate label {
+    font-family: new-atten;
+    color: rgb(16, 75, 158);
+    font-weight: 600;
+    margin-bottom: .2rem;
+}
+
+.calcBtn {
+    background-color: rgb(16, 75, 158);
+    color: white;
+    border-radius: 20px;
+    padding: 0.4rem;
+    border: 1px solid rgb(16, 75, 158);
+}
+
+.calcBtn:hover {
+    background-color: white;
+    color: rgb(16, 75, 158);
+}
+
+
+.total-output ul {
+    list-style-type: none;
+}
+
+.calculation h2 {
+    font-family: "fredoka one";
+    font-weight: 50;
+    color: rgb(16, 75, 158);
+}
+
+.nanny-description {
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 900px) {
+    main {
+        max-width: 900px;
+    }
+
+    .nanny-profile-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr;
+        gap: 1rem;
+    }
+
+    .calculation {
+        align-content: flex-start;
+    }
+}

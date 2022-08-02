@@ -113,4 +113,36 @@ article {
     .team-article article *{
         flex:1 0 100%;
     }
+    .about-section-wrapper{
+        display: block;
+        margin-left: auto;margin-right: auto;
+        max-width: 1200px;
+        padding: 1rem 3rem 1rem 3rem;
+    }
+    .about-section{
+        display: flex;
+        flex-flow: row wrap;
+       
+        justify-content: space-between;
+        
+    }
+    .about-section img{
+        
+        width: 442px;
+        height: 403px;
+        position: relative;
+        box-sizing: border-box;
+        width: 442px;
+        height: 403px;
+        top: 4;
+        right: 4;
+        border: 2px solid #FF1351;
+    }
+    .img-container{
+        flex: 1 0 30%;
+      
+    }
+    .about-section p{
+        flex: 1 0 30%;
+    }
 }

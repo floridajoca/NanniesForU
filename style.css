@@ -332,6 +332,68 @@ nav {
     .div-footer-search {
         grid-column: span 1;
     }
+    .feature-profile-div:last-child {
+        display: block;
+    }
+    .fifth-main-div {
+        padding: 5% 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+    }
+    .fifth-heading {
+        grid-column: span 3;
+    }
+    .section-4-div {
+        display: flex;
+    }
+    .content-div {
+        margin: 10px;
+    }
+    .section-4-div:nth-child(2) img {
+        order: 2;
+    }
+    .dropdown {
+        background-color: white;
+    }
+    .link-header {
+        color: black;
+        display: block;
+    }
+}
+
+/* ------------------- Nanny Profile page start ---------------------- */
+
+.similarNannies {
+    display: none;
+}
+
+.iframe-map {
+    width: 100%;
+}
+
+.nannyProfile-image {
+    width: 30%;
+}
+
+.banner-image-div {
+    background-color: rgb(206, 206, 206);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header-user {
+    text-align: center;
+}
+
+.userprofile-div {
+    display: flex;
+}
+
+.user-profile {
+    margin: 5%;
 }
 
 
