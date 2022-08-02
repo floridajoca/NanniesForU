@@ -11,6 +11,7 @@ const RatingActive = "fa-solid fa-star rating-active";
 const RatingInactive = "fa-solid fa-star rating-inactive";
 const submitRatings = document.getElementById('submitRatings');
 const cancelRatings = document.getElementById('cancelRatings');
+const btnsWrapper = document.getElementById("btns-wrapper");
 let index = 0; //RatingIndex
 let stars;
 let count;
@@ -42,31 +43,35 @@ function getNannyDetails() {
 }
 
 function renderNannyDetails() {
-  const nannyName = document.querySelector("#nanny-name");
-  const nannyLocation = document.querySelector("#nanny-location");
-  const nannyDescription = document.querySelector("#nanny-description");
-  const nannyRate = document.querySelector("#nanny-rate");
-  let calendar_days = NannyProfileDetails.schedule;
+    const nannyName = document.querySelector("#nanny-name");
+    const nannyLocation = document.querySelector("#nanny-location");
+    const nannyDescription = document.querySelector("#nanny-description");
+    const nannyRate = document.querySelector("#nanny-rate");
+    const Img=document.getElementById('nannyProfileImage');
+    let calendar_days= NannyProfileDetails.schedule;
+    Img.src=NannyProfileDetails.image;
+    nannyName.innerHTML += NannyProfileDetails.full_name;
+    nannyLocation.innerHTML += NannyProfileDetails.city;
+    nannyDescription.innerHTML += NannyProfileDetails.description ? NannyProfileDetails.description : "";
+    nannyRate.innerHTML += NannyProfileDetails.payrate;
 
-  nannyName.innerHTML += NannyProfileDetails.full_name;
-  nannyLocation.innerHTML += NannyProfileDetails.city;
-  nannyDescription.innerHTML += NannyProfileDetails.description ? NannyProfileDetails.description : "";
-  nannyRate.innerHTML += NannyProfileDetails.payrate ? NannyProfileDetails.payrate : 0;
-
-  ratingHistory = false; //reset rating history flag on new profile load
-  check_ratings(RatingStars);
-  stars = NannyProfileDetails.ratings.stars;
-  count = NannyProfileDetails.ratings.count;
-  displayRating();
-  //Render schedule
-  if (calendar_days != null) {
-    for (let day of calendar_days) {
-      let day_id = document.getElementById("" + day.toLowerCase() + "");
-      day_id.style.backgroundColor = "rgba(44, 171, 128, 1)";
-      day_id.style.color = "rgba(255, 255, 255, 1)";
+    ratingHistory = false; //reset rating history flag on new profile load
+    check_ratings(RatingStars);
+    stars = NannyProfileDetails.ratings.stars;
+    count = NannyProfileDetails.ratings.count;
+    displayRating();
+    //Render schedule
+    if(calendar_days!=null)
+    {
+        for(let day of calendar_days)
+        {
+        let day_id= document.getElementById(""+day.toLowerCase()+"");
+        day_id.style.backgroundColor = "rgba(44, 171, 128, 1)";
+        day_id.style.color = "rgba(255, 255, 255, 1)";
+        }
     }
   }
-}
+
 
 const contact = document.querySelector("#contactBtn");
 const contactWrapper = document.querySelector(".contact-info");
@@ -101,8 +106,8 @@ contact.addEventListener("click", () => {
 
 //Display the ratings
 function displayRating() {
-  submitRatings.style.display = 'none';
-  cancelRatings.style.display = 'none';
+  btnsWrapper.style.display = 'none';
+  // cancelRatings.style.display = 'none';
   ratingCountDisplay.style.display = 'inline-block';
   let starsDisplay = parseFloat(stars).toFixed(2);
   ratingCountDisplay.innerHTML = starsDisplay + ' / ' + count + ' users';
@@ -120,8 +125,8 @@ function check_ratings(RatingStars) {
     star.onclick = () => {
       index = RatingStars.indexOf(star);
       console.log(index);
-      submitRatings.style.display = 'block';
-      cancelRatings.style.display = 'block';
+      btnsWrapper.style.display = 'flex';
+      //cancelRatings.style.display = 'block';
       ratingCountDisplay.style.display = 'none';
       if (star.className == RatingInactive) {
         for (let i = 0; i <= index; i++)

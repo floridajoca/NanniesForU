@@ -3,6 +3,9 @@ import { db } from "../firebase.js"
 import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
 
 let Nannies = [];
+let RatingStars ;
+const RatingActive= "fa-solid fa-star rating-active";
+const RatingInactive= "fa-solid fa-star rating-inactive";
 
 async function getNannies() {
     const nanniesList = query(collection(db, "user"), where("user_type", "==", "Nanny"));
@@ -42,13 +45,38 @@ async function getNannyExperience() {
 function renderNanny(id, nanny, payrate) {
     document.querySelector(".nanny-profile-list-wrapper").innerHTML += `
         <div class="nanny-profile">
-            <img src="https://picsum.photos/40/40" alt="" class="profile-image">
+            <img src="${nanny.image}" alt="" class="profile-image">
             <h3>${nanny.full_name}</h3>  
             <p>Location: ${nanny.city}</p>
             <p>Pay rate:${payrate}</p>
+            <ul id="${id}reviewsDisplay" class="reviewsDisplay">
+                    <li class="rating1"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li class="rating2"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li class="rating3"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li class="rating4"><i class="fa-solid fa-star rating-inactive"></i></li>
+                    <li class="rating5"><i class="fa-solid fa-star rating-inactive"></i></li>
+                </ul>
             <button id="${id}" class="more-info">More info</button>
          </div>
         `
+    let RatingCountDisplayID = document.getElementById(id+"reviewsDisplay");
+    console.log(RatingCountDisplayID);
+    RatingStars = [...RatingCountDisplayID.getElementsByClassName("fa-star")];
+    renderRatings(nanny.ratings,RatingStars);
+}
+
+function renderRatings(ratings,RatingStars){
+    let starsDisplay = parseFloat(ratings.stars).toFixed(2);
+    //let count=ratings.count;
+      for (let i = 0; i<5; i++)
+      {
+       if(i<parseInt(starsDisplay)){
+          RatingStars[i].className = RatingActive;
+        }
+        else{
+          RatingStars[i].className = RatingInactive;
+        }
+      }
 }
 
 const currentUserLocation = JSON.parse(sessionStorage.getItem("location"));

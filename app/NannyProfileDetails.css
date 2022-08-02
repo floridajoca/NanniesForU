@@ -28,14 +28,11 @@ ul#reviewsDisplay>* {
     margin: 0;
 }
 
-.ratings-button {
-    display: none;
-}
 
-.btns-wrapper {
+#btns-wrapper {
     display: flex;
     flex-flow: row nowrap;
-    gap: .2rem;
+    gap: .6rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
@@ -56,6 +53,17 @@ ul#reviewsDisplay>* {
 }
 
 .cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1.1rem;
+    color: rgb(16, 75, 158);
+    background-color: white;
+    border: 1px solid rgb(16, 75, 158);
+    margin-bottom: .5rem;
+}
+
+.submit-button {
     -webkit-appearance: none;
     appearance: none;
     border-radius: 2rem;
@@ -166,10 +174,17 @@ main h1 {
 }
 
 .calculation {
-    background-color: rgba(16, 75, 158, 0.1);
-    border-radius: 20px;
-    padding: 2rem;
+    background-color: rgba(255, 255, 255);
+
 }
+
+
+.calculation-box {
+    background-color: rgba(16, 75, 158, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+}
+
 
 .calculate {
     display: flex;

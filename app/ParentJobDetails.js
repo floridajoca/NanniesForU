@@ -7,6 +7,7 @@ const RatingActive= "fa-solid fa-star rating-active";
 const RatingInactive= "fa-solid fa-star rating-inactive";
 const submitRatings= document.getElementById('submitRatings');
 const cancelRatings= document.getElementById('cancelRatings');
+const Img=document.getElementById('jobDetailsImg');
 let index=0; //RatingIndex
 let stars;
 let count;
@@ -18,7 +19,6 @@ count = 0;
 flagRatingsChecked=false;
 ratingHistory=false;
 
-let parent_details;
 let ParentProfileDetails = {};
 const CurrentParentPostIndex = sessionStorage.getItem("CurrentParentPostIndex");
 
@@ -46,7 +46,6 @@ async function getParentPostDetails() {
 //fetch_data();
 function fetch_data()
 {
-    parent_details = null;
     reset_color();
     ratingHistory = false; //reset rating history flag on new profile load
     check_ratings(RatingStars);
@@ -55,7 +54,7 @@ function fetch_data()
     stars = ParentProfileDetails.ratings.stars;
     count = ParentProfileDetails.ratings.count;
     displayRating();
-
+    Img.src=ParentProfileDetails.image;
     locationOutput.innerHTML=ParentProfileDetails.city;
     payRateOutput.innerHTML=ParentProfileDetails.pay_rate + ' $ per hour';
     startDateOutput.innerHTML=ParentProfileDetails.start_date;

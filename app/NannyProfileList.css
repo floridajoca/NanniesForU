@@ -5,17 +5,31 @@ main {
     font-family: new-atten;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.top-img {
+    background: url('/app/site-images/nanny-profile-list-top.png');
+    padding: 10rem;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+
+}
+
 .nanny-profile {
-    border: 1px solid grey;
+    border: 1px solid rgb(0, 0, 0, 10%);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 160px;
+    width: 180px;
+    height: 280px;
     margin: auto;
     padding: 1rem;
     border-radius: .5rem;
     background-color: rgba(16, 75, 158, .1);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .nanny-profile h3 {
@@ -31,8 +45,10 @@ main {
 }
 
 .nanny-profile img {
-    max-width: 100%;
-    height: auto;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .more-info {
@@ -43,6 +59,7 @@ main {
     color: #104B9E;
     background-color: rgba(16, 75, 158, 0);
     border: 1px solid rgb(16, 75, 158);
+    margin-top: .5rem;
 }
 
 .more-info:hover {
@@ -61,6 +78,33 @@ main {
     max-width: 450px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+
+.fa-star {
+    color: grey;
+}
+
+.rating-active {
+    color: gold;
+}
+
+
+ul.reviewsDisplay {
+    padding: 0;
+    margin: 0;
+
+}
+
+ul.reviewsDisplay>* {
+    padding: 1rem;
+    margin: 0;
+    display: inline-block;
+}
+
+.reviewsDisplay li {
+    padding: 0.20rem;
 }
 
 

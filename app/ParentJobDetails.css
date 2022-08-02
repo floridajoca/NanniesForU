@@ -1,5 +1,7 @@
 
 /* ________________MAIN________________ */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url("https://use.typekit.net/nio8yxa.css");
 
 
 .job-details-main{
@@ -12,6 +14,8 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    object-fit: cover;
+
 }
 
 .job-details-main h2{

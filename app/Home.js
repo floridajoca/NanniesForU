@@ -22,10 +22,10 @@ function setSearch()
     if(sessionStorage.getItem('LoginId'))
     {
     console.log('Here and now');
-    const contactWrapper = document.querySelector(".main-button-radio");
+    const userWrapper = document.querySelector(".main-button-radio");
     if(sessionStorage.getItem('User_Type') == 'Parent')
         {
-            contactWrapper.innerHTML = `
+            userWrapper.innerHTML = `
             <div class="radio-button">
                 <input type="radio" class="inputButton" name="search-button-select" value="nanny-search" checked>
                 <label for="parent-search" class="InputLabel">Find Nanny</label>
@@ -34,7 +34,7 @@ function setSearch()
         }
     else if(sessionStorage.getItem('User_Type') == 'Nanny')
         {
-            contactWrapper.innerHTML = `
+            userWrapper.innerHTML = `
             <div class="radio-button">
                 <input type="radio" class="inputButton" name="search-button-select" value="job-search" checked>
                 <label for="nanny-search" class="InputLabel">Search Job as Nanny</label>
