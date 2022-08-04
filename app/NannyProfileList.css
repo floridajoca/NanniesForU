@@ -5,21 +5,21 @@ main {
     font-family: new-atten;
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
 
-.top-img{
+.top-img {
     background: url('/app/site-images/nanny-profile-list-top.png');
     padding: 10rem;
     background-repeat: no-repeat;
     box-sizing: border-box;
-    
+
 }
 
 .nanny-profile {
-    border: 1px solid rgb(0, 0, 0,10%);
+    border: 1px solid rgb(0, 0, 0, 10%);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -45,9 +45,10 @@ img{
 }
 
 .nanny-profile img {
-    width: 125px;
-    height: 125px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .more-info {
@@ -58,6 +59,7 @@ img{
     color: #104B9E;
     background-color: rgba(16, 75, 158, 0);
     border: 1px solid rgb(16, 75, 158);
+    margin-top: .5rem;
 }
 
 .more-info:hover {
@@ -80,11 +82,11 @@ img{
 }
 
 
-.fa-star{
+.fa-star {
     color: grey;
 }
 
-.rating-active{
+.rating-active {
     color: gold;
 }
 
@@ -95,13 +97,13 @@ ul.reviewsDisplay {
 
 }
 
-ul.reviewsDisplay > * {
+ul.reviewsDisplay>* {
     padding: 1rem;
     margin: 0;
     display: inline-block;
 }
 
-.reviewsDisplay li{
+.reviewsDisplay li {
     padding: 0.20rem;
 }
 

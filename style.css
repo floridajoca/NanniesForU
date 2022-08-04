@@ -46,7 +46,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 2%;
-    background-color:#2CAB80;
+    background-color: #2CAB80;
     color: white;
 }
 
@@ -57,6 +57,7 @@ body {
 
 .social-ul {
     display: flex;
+    align-items: center;
 }
 
 .front-image {
@@ -160,7 +161,7 @@ body {
 }
 
 .footer-last-div {
-    background-color: rgb(217, 217, 217);
+    background-color: #79C9AE;
 }
 
 
@@ -178,9 +179,6 @@ body {
     flex: 1 0 20%;
     align-items: center;
 }
-.dropdown{
-    flex: 1 0 80%;
-}
 
 .menu-button {
     padding: 10px;
@@ -190,40 +188,30 @@ body {
 /* ------------------ */
 
 .logo {
-    width: 20%;
+    width: 32%;
 }
 
 .image-4 {
     width: 100%;
 }
 
-.third-section {
-    background-color: rgb(217, 217, 217);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* .profile-image {
-    width: 40%;
-    border-radius: 50%;
-} */
-
-.site-links-top ul{
+.site-links-top ul {
     list-style-type: none;
     display: flex;
-    gap: 0.1rem;
+    gap: 2rem;
 }
 
 
-.site-links-top li{
-    flex-grow: 1;
-    padding: 0.25rem;
+.site-links-top li {
+    padding: 0.7rem;
 }
-.site-links-top a{
+
+.site-links-top a {
     text-decoration: none;
+    font-size: 1.6rem;
+    font-family: "Fredoka One";
+    color: rgb(16, 75, 158);
 }
-
 
 .profile-div {
     margin: 0;
@@ -249,8 +237,8 @@ body {
 }
 
 .image-4 {
-    width: 100%;
-    height: 200px;
+    max-width: 100%;
+    height: auto;
     border-radius: 20px;
 }
 
@@ -261,14 +249,10 @@ body {
 
 .para-4-link {
     border-radius: 20px;
-    padding: 10px 30px;
     display: inline-block;
     background-color: rgb(217, 217, 217);
 }
 
-.fifth-section {
-    background-color: rgb(217, 217, 217);
-}
 
 .fifth-main-div {
     margin: 5% 5% 0 5%;
@@ -279,12 +263,6 @@ body {
 .fifth-heading {
     margin: 0;
     padding: 7% 0;
-}
-
-.featured-profile-img {
-    width: 100%;
-    height: 250px;
-    border-radius: 20px;
 }
 
 .footer-last-div {
@@ -299,6 +277,15 @@ body {
 
 .about-ul {
     padding: 0;
+}
+
+
+.about-ul a,
+.user-ul a,
+.social-ul a {
+    font-size: 1.8rem;
+    color: white;
+    font-family: new-atten;
 }
 
 .user-ul {
@@ -334,15 +321,11 @@ body {
     padding: 10% 0;
 }
 
-.feature-profile-div:last-child {
-    display: none;
-}
-
 .social-ul-li {
-    padding: 5px;
-    background-color: rgb(217, 217, 217);
+    padding: 15px;
+    background-color: #fff;
     border-radius: 50%;
-    margin: 2px;
+    margin: 5px;
 }
 
 .footer-search-input {
@@ -362,11 +345,14 @@ body {
 }
 
 .heading-footer {
-    font-weight: bold;
+    font-family: "Fredoka One";
+    font-size: 2.2rem;
+    color: white;
+    letter-spacing: 4px;
 }
 
 .last-div {
-    background-color: rgb(267, 267, 267);
+    background-color: #104B9E;
     margin: 0;
 }
 
@@ -376,146 +362,85 @@ body {
 
 .last-para {
     text-align: center;
-    font-size: 12px;
+    font-size: 1.5rem;
     padding: 10px 2%;
     margin: 0;
+    color: white;
+    font-family: new-atten;
+}
+
+.fa-brands {
+    font-size: 2.5rem;
+    color: #FF435B;
+    padding: 0;
 }
 
 @media screen and (min-width:1000px) {
     .header-menu {
         display: block;
     }
+
     .menu-button {
         display: none;
     }
+
     .main-navbar {
         display: flex;
         align-items: center;
-        padding: 1rem;
+        padding: 3rem;
+        justify-content: space-between;
     }
+
     .menu-ul {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
     }
+
     .footer-last-div {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
     }
+
     .div-footer-search {
         grid-column: span 1;
     }
+
     .feature-profile-div:last-child {
         display: block;
     }
+
     .fifth-main-div {
         padding: 5% 0;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
     }
+
     .fifth-heading {
         grid-column: span 3;
     }
+
     .section-4-div {
         display: flex;
     }
+
     .content-div {
-        margin: 10px;
+        margin-left: 55px;
+        padding-top: 20px;
     }
+
     .section-4-div:nth-child(2) img {
         order: 2;
     }
+
     .dropdown {
         background-color: white;
     }
+
     .link-header {
         color: black;
         display: block;
     }
 }
-
-
-/* ------------------- Nanny Profile page start ---------------------- */
-
-
-/* .similarNannies {
-    display: none;
-}
-
-.iframe-map {
-    width: 100%;
-}
-
-.nannyProfile-image {
-    width: 30%;
-}
-
-.banner-image-div {
-    background-color: rgb(206, 206, 206);
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-header-user {
-    text-align: center;
-}
-
-.userprofile-div {
-    display: flex;
-}
-
-.user-profile {
-    margin: 5%;
-}
-
-.userinfo {
-    padding: 5%;
-}
-
-.head-p {
-    font-weight: bold;
-}
-
-.button {
-    border: none;
-    padding: 10px;
-    border-radius: 50px;
-}
-
-.button:nth-child(1) {
-    background-color: rgb(206, 206, 206);
-}
-
-.prev,
-.next {
-    display: inline-block;
-}
-
-.prevNext {
-    display: flex;
-    justify-content: space-between;
-}
-
-.rateCalc {
-    margin: 5%;
-    background-color: azure;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.calcHead {
-    text-align: center;
-}
-
-.form-calculation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
-
-/* ------------------- Nanny Profile page end ---------------------- */
