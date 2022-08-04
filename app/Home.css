@@ -1,17 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url("https://use.typekit.net/nio8yxa.css");
 
-body{
+body {
     line-height: 1.5;
 }
-.first-section{
+
+.first-section {
     padding: 6rem;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/app/site-images/homepage-top.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('site-images/homepage-top.png');
     background-size: cover;
     opacity: 8.9;
     color: white;
 }
-.tt-search-box-input-container{
+
+.product-container {
+    margin-bottom: 3rem;
+}
+
+.tt-search-box-input-container {
     border-radius: 20px;
     display: flex;
     flex-flow: row-reverse;
@@ -36,24 +42,333 @@ input[type='radio']:checked:after {
     border: 2px solid white;
 }
 
-.tt-search-box{
+.tt-search-box {
     border-radius: 20px;
 }
 
-.tt-search-box-input-container div:nth-of-type(1) svg{
+.tt-search-box-input-container div:nth-of-type(1) svg {
     background-color: #00ecae;
     margin: 0;
     height: 1.5rem;
     color: rgb(16, 16, 16);
     padding: 0.5rem 1.5rem 0.5rem .75rem;
-    border-top-right-radius:20px ;
-    border-bottom-right-radius:20px ;
-    mix-blend-mode:exclusion;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    mix-blend-mode: exclusion;
 }
 
-.tt-search-box-input-container div:nth-of-type(1){
+.tt-search-box-input-container div:nth-of-type(1) {
     place-items: center;
     display: flex;
     margin: 0;
     padding: 0;
+}
+
+
+.first-section-para {
+    font-size: 14px;
+    margin: 10px 30px;
+    text-align: center;
+    color: white;
+}
+
+.icon-img {
+    height: 100px;
+    width: 100px;
+}
+
+.small-div-network {
+    padding: 55px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(16, 75, 158, 10%);
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+p.network-heading {
+    font-family: "Fredoka One";
+    font-size: 1.5rem;
+    color: #104B9E
+}
+
+.small-div-date {
+    padding: 55px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(16, 75, 158, 10%);
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.small-div-nanny {
+    padding: 55px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 19, 81, 10%);
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.small-div-mind {
+    padding: 55px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 19, 81, 10%);
+    ;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main-container {
+    text-align: center;
+}
+
+.second-section {
+    padding: 30px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.review-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #79C9AE;
+}
+
+.para-name {
+    padding: 10px;
+    color: black;
+}
+
+.review-img {
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-name {
+    color: whitesmoke;
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.review-para {
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+
+.dot {
+    position: relative;
+    top: -30px;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.review-main {
+    display: none;
+}
+
+h3.featured-profile-heading {
+    font-size: 2rem;
+    font-family: 'new-atten';
+    margin: 0;
+}
+
+.fourth-section {
+    padding: 20px;
+    display: grid;
+    gap: 1rem;
+}
+
+.heading-4 {
+    margin-top: 10px;
+    color: #104B9E;
+    font-size: 2rem;
+    font-family: "Fredoka One";
+}
+
+.link-4 {
+    padding: 1rem 4rem;
+    text-align: center;
+    background-color: rgba(255, 67, 91);
+    color: white;
+    border-radius: 4rem;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: new-atten;
+}
+
+.para-4 {
+    color: black;
+    font-size: 1.3rem;
+    font-family: new-atten;
+}
+
+.image-4 {
+    width: 100%;
+    height: auto;
+}
+
+.container-class {
+    text-align: center;
+}
+
+.fifth-section {
+    /* padding: 20px; */
+    background-color: rgba(255, 19, 81, 10%);
+    width: 100%;
+}
+
+.fifth-heading {
+    color: #104B9E;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Fredoka One";
+    font-size: 2rem;
+}
+
+.para-4-link {
+    margin-top: 40px;
+}
+
+.third-section {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 5rem;
+    align-items: center;
+}
+
+.feature-profile-div {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.featured-para {
+    margin: 0;
+    color: black;
+    font-size: 1.5rem;
+    font-family: new-atten;
+}
+
+.sixth-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("img/second-bag.png");
+    width: 100%;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(74, 73, 72, 0.5);
+    /* Tint color */
+    background-blend-mode: multiply;
+}
+
+.childcare {
+    grid-row: 4/5;
+}
+
+.third-container {
+    background-color: #79C9AE;
+}
+
+@media screen and (min-width:900px) {
+    .second-section {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dots {
+        display: none;
+    }
+
+    .review-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+    }
+
+    .fourth-section {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .childcare {
+        grid-row: 2/3;
+    }
+
+    .featured-profiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .feature-profile-div:nth-child(2),
+    .feature-profile-div:nth-child(3) {
+        display: block;
+    }
+
+
+
+    .fifth-heading {
+        padding: 30px;
+        font-family: "Fredoka One";
+    }
+
+    .featured-profile-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .second-section {
+        padding: 30px 100px;
+    }
+
+    .product-container {
+        display: flex;
+        gap: 1rem;
+
+    }
+
+    .third-section {
+        display: flex;
+        flex-flow: row nowrap;
+        padding: 5rem;
+        position: relative;
+    }
+
+    .container-class {
+        margin-right: 1rem;
+    }
+
 }

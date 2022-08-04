@@ -3,9 +3,9 @@ import { db } from "../firebase.js"
 import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js";
 
 let Nannies = [];
-let RatingStars ;
-const RatingActive= "fa-solid fa-star rating-active";
-const RatingInactive= "fa-solid fa-star rating-inactive";
+let RatingStars;
+const RatingActive = "fa-solid fa-star rating-active";
+const RatingInactive = "fa-solid fa-star rating-inactive";
 
 async function getNannies() {
     const nanniesList = query(collection(db, "user"), where("user_type", "==", "Nanny"));
@@ -59,24 +59,23 @@ function renderNanny(id, nanny, payrate) {
             <button id="${id}" class="more-info">More info</button>
          </div>
         `
-    let RatingCountDisplayID = document.getElementById(id+"reviewsDisplay");
+    let RatingCountDisplayID = document.getElementById(id + "reviewsDisplay");
     console.log(RatingCountDisplayID);
     RatingStars = [...RatingCountDisplayID.getElementsByClassName("fa-star")];
-    renderRatings(nanny.ratings,RatingStars);
+    renderRatings(nanny.ratings, RatingStars);
 }
 
-function renderRatings(ratings,RatingStars){
+function renderRatings(ratings, RatingStars) {
     let starsDisplay = parseFloat(ratings.stars).toFixed(2);
     //let count=ratings.count;
-      for (let i = 0; i<5; i++)
-      {
-       if(i<parseInt(starsDisplay)){
-          RatingStars[i].className = RatingActive;
+    for (let i = 0; i < 5; i++) {
+        if (i < parseInt(starsDisplay)) {
+            RatingStars[i].className = RatingActive;
         }
-        else{
-          RatingStars[i].className = RatingInactive;
+        else {
+            RatingStars[i].className = RatingInactive;
         }
-      }
+    }
 }
 
 const currentUserLocation = JSON.parse(sessionStorage.getItem("location"));
@@ -116,4 +115,4 @@ function addNannyMarkers() {
     })
 }
 
-getNannies();
+export function init() { getNannies(); }

@@ -43,34 +43,32 @@ function getNannyDetails() {
 }
 
 function renderNannyDetails() {
-    const nannyName = document.querySelector("#nanny-name");
-    const nannyLocation = document.querySelector("#nanny-location");
-    const nannyDescription = document.querySelector("#nanny-description");
-    const nannyRate = document.querySelector("#nanny-rate");
-    const Img=document.getElementById('nannyProfileImage');
-    let calendar_days= NannyProfileDetails.schedule;
-    Img.src=NannyProfileDetails.image;
-    nannyName.innerHTML += NannyProfileDetails.full_name;
-    nannyLocation.innerHTML += NannyProfileDetails.city;
-    nannyDescription.innerHTML += NannyProfileDetails.description ? NannyProfileDetails.description : "";
-    nannyRate.innerHTML += NannyProfileDetails.payrate;
+  const nannyName = document.querySelector("#nanny-name");
+  const nannyLocation = document.querySelector("#nanny-location");
+  const nannyDescription = document.querySelector("#nanny-description");
+  const nannyRate = document.querySelector("#nanny-rate");
+  const Img = document.getElementById('nannyProfileImage');
+  let calendar_days = NannyProfileDetails.schedule;
+  Img.src = NannyProfileDetails.image;
+  nannyName.innerHTML += NannyProfileDetails.full_name;
+  nannyLocation.innerHTML += NannyProfileDetails.city;
+  nannyDescription.innerHTML += NannyProfileDetails.description ? NannyProfileDetails.description : "";
+  nannyRate.innerHTML += NannyProfileDetails.payrate;
 
-    ratingHistory = false; //reset rating history flag on new profile load
-    check_ratings(RatingStars);
-    stars = NannyProfileDetails.ratings.stars;
-    count = NannyProfileDetails.ratings.count;
-    displayRating();
-    //Render schedule
-    if(calendar_days!=null)
-    {
-        for(let day of calendar_days)
-        {
-        let day_id= document.getElementById(""+day.toLowerCase()+"");
-        day_id.style.backgroundColor = "rgba(44, 171, 128, 1)";
-        day_id.style.color = "rgba(255, 255, 255, 1)";
-        }
+  ratingHistory = false; //reset rating history flag on new profile load
+  check_ratings(RatingStars);
+  stars = NannyProfileDetails.ratings.stars;
+  count = NannyProfileDetails.ratings.count;
+  displayRating();
+  //Render schedule
+  if (calendar_days != null) {
+    for (let day of calendar_days) {
+      let day_id = document.getElementById("" + day.toLowerCase() + "");
+      day_id.style.backgroundColor = "rgba(44, 171, 128, 1)";
+      day_id.style.color = "rgba(255, 255, 255, 1)";
     }
   }
+}
 
 
 const contact = document.querySelector("#contactBtn");
@@ -218,4 +216,4 @@ function calculatePayment(days, payRate) {
     </ul>`
 }
 
-getNannyDetails();
+export function init() { getNannyDetails(); }
