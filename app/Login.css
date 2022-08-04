@@ -31,9 +31,10 @@
 }
 
 .login-container h2{
-    color: #104B9E; 
+    color: #104B9E;
     font-size: 2rem;
     text-align: center;
+    font-family: "Fredoka One";
 }
 
 .login-container a.psw {
@@ -57,8 +58,13 @@
 .login-container p.register{
     text-align: center;
     font-weight: 600;
+    font-family: new-atten;
+    font-size: 1rem;
 }
 
+.login-container p.register a {
+ color: #104B9E;
+}
 .login-class {
     padding: 2rem;
     border-bottom: 1px solid rgba(118,118,118,10%);

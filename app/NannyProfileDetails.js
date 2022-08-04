@@ -216,4 +216,4 @@ function calculatePayment(days, payRate) {
     </ul>`
 }
 
-export function init() { getNannyDetails(); }
+getNannyDetails(); 

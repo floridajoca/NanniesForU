@@ -1,32 +1,44 @@
-
 /* ________________MAIN________________ */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url("https://use.typekit.net/nio8yxa.css");
 
-img{
+img {
     max-width: 100%;
     height: auto;
 }
-h2{
+
+main {
+    font-family: new-atten;
+}
+
+h2 {
     text-align: center;
+    font-family: 'Fredoka One';
+    color: #104B9E;
 }
-.contact-info-details a{
+
+.contact-info-details a {
     text-decoration: none;
- }
- ul.contact-info-details{
- list-style-type: none;
 }
-main{
+
+ul.contact-info-details {
+    list-style-type: none;
+}
+
+main {
     padding-bottom: 2rem;
 }
 
-.top-img img{
+.top-img img {
     object-fit: cover;
 }
-.job-details-main{
+
+.job-details-main {
     padding: 1rem;
+    font-size: 1.2rem;
 }
-.job-details-main img{
+
+.job-details-main img {
     width: 235px;
     height: 235px;
     border-radius: 50%;
@@ -37,15 +49,15 @@ main{
 
 }
 
-.job-details-main h2{
+.job-details-main h2 {
     text-align: center;
 }
 
-.job-details-main h4{
+.job-details-main h4 {
     margin: 0.25rem;
 }
 
-.job-post-details *{
+.job-post-details * {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -59,21 +71,23 @@ main{
     flex: 1 0 50%;
 } */
 
-.fa-star{
+.fa-star {
     color: grey;
 }
 
-.rating-active{
+.rating-active {
     color: gold;
 }
 
-#ratingCountDisplay{
+#ratingCountDisplay {
     padding: 0 1rem;
 }
-.reviews-display{
+
+.reviews-display {
     display: flex;
     flex-flow: row nowrap;
 }
+
 ul#reviewsDisplay {
     padding: 0;
     margin: 0;
@@ -81,29 +95,54 @@ ul#reviewsDisplay {
     list-style-type: none;
 }
 
-ul#reviewsDisplay > * {
+ul#reviewsDisplay>* {
     padding: 1rem;
     margin: 0;
-    
+
 }
 
-.ratings-button{
+/* .ratings-button {
     display: none;
 }
 
-.ratings-button{
+.ratings-button {
     border-radius: 20px;
     padding: 0.25rem;
     color: white;
     background-color: #FF435B;
     margin-right: 1rem;
     font-size: 21px;
+} */
+
+.ratings-button {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1.1rem;
+    color: white;
+    background-color: rgb(16, 75, 158);
+    border: 1px solid rgb(16, 75, 158);
+    margin-bottom: .5rem;
+}
+
+.ratings-button:hover {
+    background-color: rgba(16, 75, 158, 0.78);
+}
+
+#cancelRatings {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1.1rem;
+    color: rgb(16, 75, 158);
+    background-color: white;
+    border: 1px solid rgb(16, 75, 158);
+    margin-bottom: .5rem;
 }
 
 
 
-
-.job-details-buttons button{
+.job-details-buttons button {
     border-radius: 40px;
     padding: 0.5rem 1rem;
     color: white;
@@ -112,14 +151,15 @@ ul#reviewsDisplay > * {
     font-size: 21px;
     border: 1px solid #FF435B;
 }
-.navigation-button{
+
+.navigation-button {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     padding: 1rem;
 }
 
-.navigation-button button{
+.navigation-button button {
     border: none;
     background-color: white;
 }
@@ -131,10 +171,10 @@ ul.schedule-display-list {
     margin-bottom: 2rem;
 }
 
-.schedule-display-list li{
+.schedule-display-list li {
     display: inline-block;
     margin: 0.25rem;
-    padding:0.5rem;
+    padding: 0.5rem;
     width: 30px;
     height: 30px;
     background-color: rgba(224, 224, 224, 1);
@@ -210,18 +250,18 @@ ul.schedule-display-list {
     color: rgb(16, 75, 158);
 }
 
-.job-details-container{
+.job-details-container {
     display: grid;
 }
 
 
 /* ______________END MAIN______________ */
 
-@media screen and (min-width: 1000px ) {
+@media screen and (min-width: 1000px) {
 
 
     /* ..........MAIN........ */
-    .job-details-main{
+    .job-details-main {
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-start;
@@ -232,40 +272,41 @@ ul.schedule-display-list {
         background-color: rgba(16, 75, 158, 0.1);
         border-radius: 20px;
         margin: 2rem 0;
-      
-        padding: 2rem 40rem 1rem 1rem;
+
+        padding: 1rem 30rem 1rem 1rem;
         font-size: 1.25rem;
-    
+
     }
 
-    .job-details-container{
+    .job-details-container {
         max-width: 1100px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .job-details-main h2{
+    .job-details-main h2 {
         flex: 1 0 100%;
         /* justify-self: start; */
     }
 
-    .job-details-main img{
+    .job-details-main img {
         flex: 0 0 30%;
         width: 20%;
         align-self: center;
     }
 
-    .job-post-details{
+    .job-post-details {
         flex: 0 0 60%;
+        align-self: center;
     }
-    .description-display{
+
+    .description-display {
         flex: 1 0 100%;
     }
 
-    ul.contact-info-details{
-        
-    }
-    .job-details-container{
-        grid-template-columns: 5fr 1fr;
+    ul.contact-info-details {}
+
+    .job-details-container {
+        grid-template-columns: 5fr 2fr;
     }
 }
