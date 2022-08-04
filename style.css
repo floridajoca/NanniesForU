@@ -3,6 +3,28 @@ body {
     margin: 0;
 }
 
+
+/* offline listener styling */
+
+
+.offline-wrapper{
+ 
+    padding: 5rem;
+    font-size: 2rem;
+    color: red;
+}
+
+
+.offline-wrapper img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0;
+}
+
+/* end offline listener styling */
+
+
 .about-ul-li,
 .social-ul-li,
 .ul-li-header,

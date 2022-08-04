@@ -87,7 +87,8 @@ var setLocation;
 setCurrentCenter();
 
 function setCurrentCenter() {
-    if (sessionStorage.getItem("searchPosition") != null) {
+    if (sessionStorage.getItem("searchPosition") != null) 
+    {
         currentUserSearchLocation = JSON.parse(sessionStorage.getItem("searchPosition"));
         setLocation = currentUserSearchLocation;
     }

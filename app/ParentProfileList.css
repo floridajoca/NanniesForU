@@ -16,6 +16,25 @@
 }
 
  */
+
+.parent-profile-list-main{
+    font-family: 'Atten New';
+}
+
+.profile-details p
+{
+    font-weight: 500;
+    font-weight: bold;
+}
+
+.profile-details p > span
+{   
+    padding: 0 0 0 1rem;
+    font-weight: 500;
+    font-weight:normal;
+}
+
+
 img {
     max-width: 100%;
     height: auto;
