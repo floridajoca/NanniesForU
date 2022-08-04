@@ -1,0 +1,46 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    color: #104B9E;
+    font-size: 30px;
+    font-family: 'Fredoka One', cursive;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background-color: #7676761f;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+input[type=submit] {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    padding: 0.6rem 2rem;
+    color: white;
+    background-color: rgb(255, 67, 91);
+    border: 1px solid rgb(255, 67, 91);
+    margin-bottom: .5rem;
+    font-family: "Fredoka One";
+}
+
+.container {
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
