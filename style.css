@@ -7,15 +7,16 @@ body {
 /* offline listener styling */
 
 
-.offline-wrapper{
- 
+.offline-wrapper {
+
     padding: 5rem;
     font-size: 2rem;
     color: red;
+    text-align: center;
 }
 
 
-.offline-wrapper img{
+.offline-wrapper img {
     display: block;
     margin-left: auto;
     margin-right: auto;
