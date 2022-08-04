@@ -56,6 +56,7 @@ function fetch_data()
     displayRating();
     Img.src=ParentProfileDetails.image;
     locationOutput.innerHTML=ParentProfileDetails.city;
+    lookingForOutput.innerHTML = ParentProfileDetails.looking_for;
     payRateOutput.innerHTML=ParentProfileDetails.pay_rate + ' $ per hour';
     startDateOutput.innerHTML=ParentProfileDetails.start_date;
     endDateOutput.innerHTML=ParentProfileDetails.end_date;
@@ -81,7 +82,7 @@ function displayRating(){
     cancelRatings.style.display='none';
     ratingCountDisplay.style.display='inline-block';
     let starsDisplay = parseFloat(stars).toFixed(2);
-    ratingCountDisplay.innerHTML= starsDisplay +' ratings by '+count+' users';
+    ratingCountDisplay.innerHTML= starsDisplay +' / '+count+' users';
     for (let i = 0; i<5; i++)
     {
         if(i<parseInt(starsDisplay))
@@ -191,13 +192,14 @@ contact.addEventListener("click", () => {
         } else {
             contactShowFlag = true;
             const contactWrapper = document.querySelector(".contact-info");
-            contactWrapper.innerHTML = `
+            contactWrapper.innerHTML = 
+                `
                 <ul class="contact-info-details">
                     <li>
-                      Email:<span> ${ParentProfileDetails.email}</span>
+                    <i class="fa-solid fa-envelope"></i><a href="mailto:${ParentProfileDetails.email}">${ParentProfileDetails.email}</a>
                     </li>
                     <li>
-                      Contact:<span>${ParentProfileDetails.contact}</span>
+                    <i class="fa-solid fa-phone"></i><a href="tel:${ParentProfileDetails.contact}">${ParentProfileDetails.contact}</span>
                     </li>
                 </ul>`;
         }
@@ -215,7 +217,7 @@ calculateButton.addEventListener("click", () => {
 });
 
 function calculatePayment(days, payRate) {
-    const duration = document.querySelector("#job-duration").value;
+    const duration = document.querySelector("#duration").value;
     const hours = document.querySelector(".hours").value;
     const output = document.querySelector(".total-output");
 
@@ -226,9 +228,9 @@ function calculatePayment(days, payRate) {
     const total = (wage + GST + PST).toFixed(2);
     output.innerHTML = `
     <ul> 
-        <li>The total is CAD${total}.</li>
-        <li>GST is CAD${Math.ceil(GST)}</li>
-        <li>PST is CAD${Math.ceil(PST)}</li>
+        <li>The total is: CAD ${total}.</li>
+        <li>GST is: CAD ${Math.ceil(GST)}</li>
+        <li>PST is: CAD ${Math.ceil(PST)}</li>
     </ul>`
 }
 

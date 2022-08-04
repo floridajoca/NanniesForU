@@ -139,12 +139,14 @@ async function init() {
 };
 
 const currentUserLocation = JSON.parse(sessionStorage.getItem("location"));
+console.log("here", JSON.stringify(JSON.parse(sessionStorage.getItem("location"))));
 var currentUserSearchLocation=sessionStorage.getItem("searchPosition");
 
 var setLocation;
 setCurrentCenter();
 
-function setCurrentCenter(){
+function setCurrentCenter()
+{
     if(sessionStorage.getItem("searchPosition")!=null)
     {
         currentUserSearchLocation = JSON.parse(sessionStorage.getItem("searchPosition"));
@@ -154,7 +156,6 @@ function setCurrentCenter(){
         setLocation = currentUserLocation;
     }
 }
-
 
 
 let map = tt.map({

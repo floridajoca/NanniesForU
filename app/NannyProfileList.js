@@ -115,4 +115,4 @@ function addNannyMarkers() {
     })
 }
 
-export function init() { getNannies(); }
+getNannies();
