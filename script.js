@@ -1,6 +1,6 @@
 'use strict';
 
-import {userTypeValidation} from "./app/utils/validateUserType.js";
+import { userTypeValidation } from "./app/utils/validateUserType.js";
 
 userTypeValidation();
 
@@ -17,4 +17,7 @@ Router.init("main-area", [
     new Page("#nannyprofiledetails", 'app/NannyProfileDetails.html'),
     new Page("#nannyprofilelist", 'app/NannyProfileList.html'),
     new Page("#usersettings", 'app/UserSettings.html'),
+    new Page("#contactus", 'app/ContactUs.html'),
+    new Page("#terms", 'app/Terms.html'),
+    new Page("#help", 'app/Help.html'),
 ]);
