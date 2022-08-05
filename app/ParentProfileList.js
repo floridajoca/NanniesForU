@@ -4,9 +4,9 @@ import { collection, query, where, getDocs } from "https://www.gstatic.com/fireb
 
 const Parents = [];
 let JobPostSnapshot = [];
-let RatingStars ;
-const RatingActive= "fa-solid fa-star rating-active";
-const RatingInactive= "fa-solid fa-star rating-inactive";
+let RatingStars;
+const RatingActive = "fa-solid fa-star rating-active";
+const RatingInactive = "fa-solid fa-star rating-inactive";
 
 async function getParents() {
     const parentsList = query(collection(db, "user"), where("user_type", "==", "Parent"));
@@ -39,7 +39,7 @@ async function getParentJobPosts() {
     return PostsByParentId;
 }
 
-function renderParent(id, Parent, pay_rate, looking_for,schedule) {
+function renderParent(id, Parent, pay_rate, looking_for, schedule) {
     document.querySelector(".parent-profile-list-wrapper").innerHTML += `
         <div class="Parent-profile" id="${id}-parent-profile">
             <div class="profile-image">
@@ -74,26 +74,25 @@ function renderParent(id, Parent, pay_rate, looking_for,schedule) {
          </div>
         `
 
-    let calendar_days= schedule; //get schedule values from event
-    let ScheduleDisplayID = document.getElementById(id+"scheduleOutput");
+    let calendar_days = schedule; //get schedule values from event
+    let ScheduleDisplayID = document.getElementById(id + "scheduleOutput");
     //let ScheduleListElements = [...ScheduleDisplayID.getElementsByTagName("li")];
-    renderSchedule(ScheduleDisplayID,calendar_days);
+    renderSchedule(ScheduleDisplayID, calendar_days);
 
-    let RatingCountDisplayID = document.getElementById(id+"reviewsDisplay");
+    let RatingCountDisplayID = document.getElementById(id + "reviewsDisplay");
     RatingStars = [...RatingCountDisplayID.getElementsByClassName("fa-star")];
-    renderRatings(Parent.ratings,RatingStars);
+    renderRatings(Parent.ratings, RatingStars);
 }
 
 function renderButtonId() {
     JobPostSnapshot.forEach((doc) => {
         let parentID = doc.parent_id;
         let pid = document.getElementById(parentID);
-        if (pid !== null)
-        {
+        if (pid !== null) {
             pid.addEventListener('click', () => {
-                    sessionStorage.setItem("CurrentParentPostIndex", doc.parent_id);
-                    console.log(sessionStorage.getItem("CurrentParentPostIndex"));
-                    location.assign("#parentjobpost");
+                sessionStorage.setItem("CurrentParentPostIndex", doc.parent_id);
+                console.log(sessionStorage.getItem("CurrentParentPostIndex"));
+                location.assign("#parentjobpost");
             });
         }
         else {
@@ -102,32 +101,28 @@ function renderButtonId() {
     });
 }
 
-function renderRatings(ratings,RatingStars){
+function renderRatings(ratings, RatingStars) {
     let starsDisplay = parseFloat(ratings.stars).toFixed(2);
     //let count=ratings.count;
-      for (let i = 0; i<5; i++)
-      {
-       if(i<parseInt(starsDisplay)){
-          RatingStars[i].className = RatingActive;
+    for (let i = 0; i < 5; i++) {
+        if (i < parseInt(starsDisplay)) {
+            RatingStars[i].className = RatingActive;
         }
-        else{
-          RatingStars[i].className = RatingInactive;
+        else {
+            RatingStars[i].className = RatingInactive;
         }
-      }
+    }
 }
 
-function renderSchedule(ScheduleDisplayID,calendar_days)
-{
-  if(calendar_days!=null)
-  {
-    for(let day of calendar_days)
-    {
-      day= day.toLowerCase();
-      let day_id= ScheduleDisplayID.getElementsByClassName(day);
-      day_id[0].style.backgroundColor = "rgba(44, 171, 128, 1)";
-      day_id[0].style.color = "rgba(255, 255, 255, 1)";
+function renderSchedule(ScheduleDisplayID, calendar_days) {
+    if (calendar_days != null) {
+        for (let day of calendar_days) {
+            day = day.toLowerCase();
+            let day_id = ScheduleDisplayID.getElementsByClassName(day);
+            day_id[0].style.backgroundColor = "rgba(44, 171, 128, 1)";
+            day_id[0].style.color = "rgba(255, 255, 255, 1)";
+        }
     }
-  }
 }
 
 init();
@@ -140,19 +135,17 @@ async function init() {
 
 const currentUserLocation = JSON.parse(sessionStorage.getItem("location"));
 console.log("here", JSON.stringify(JSON.parse(sessionStorage.getItem("location"))));
-var currentUserSearchLocation=sessionStorage.getItem("searchPosition");
+var currentUserSearchLocation = sessionStorage.getItem("searchPosition");
 
 var setLocation;
 setCurrentCenter();
 
-function setCurrentCenter()
-{
-    if(sessionStorage.getItem("searchPosition")!=null)
-    {
+function setCurrentCenter() {
+    if (sessionStorage.getItem("searchPosition") != null) {
         currentUserSearchLocation = JSON.parse(sessionStorage.getItem("searchPosition"));
         setLocation = currentUserSearchLocation;
     }
-    else{
+    else {
         setLocation = currentUserLocation;
     }
 }
@@ -162,7 +155,7 @@ let map = tt.map({
     key: API_KEY,
     container: 'map-div',
     center: setLocation,
-    zoom: 12
+    zoom: 13
 });
 
 const currentUserMarker = new tt.Marker().setLngLat(currentUserLocation).addTo(map);

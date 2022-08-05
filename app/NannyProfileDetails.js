@@ -4,7 +4,6 @@ import { collection, getDocs, getDoc, doc, query, updateDoc } from "https://www.
 
 let NannyProfileDetails = {};
 
-const selectedNannyId = sessionStorage.getItem("selectedNanny");
 
 let RatingStars = [...document.getElementsByClassName("fa-star")];
 const RatingActive = "fa-solid fa-star rating-active";
@@ -22,6 +21,7 @@ stars = 0;
 count = 0;
 flagRatingsChecked = false;
 ratingHistory = false;
+let selectedNannyId;
 
 function getNannyDetails() {
   console.log("Selected nanny" + selectedNannyId)
@@ -216,4 +216,7 @@ function calculatePayment(days, payRate) {
     </ul>`
 }
 
-getNannyDetails(); 
+export function init() {
+  selectedNannyId = sessionStorage.getItem("selectedNanny");
+  getNannyDetails(selectedNannyId);
+}

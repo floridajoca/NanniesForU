@@ -24,8 +24,8 @@ async function getNannies() {
         });
         snapshot.docs.forEach((doc) => {
             document.getElementById(`${doc.id}`).addEventListener('click', () => {
-                location.assign("#nannyprofiledetails");
                 sessionStorage.setItem("selectedNanny", doc.id);
+                location.assign("#nannyprofiledetails");
             }
             )
         });
@@ -115,4 +115,10 @@ function addNannyMarkers() {
     })
 }
 
-getNannies();
+export function init() {
+    const currentUserMarker = new tt.Marker().setLngLat(currentUserLocation).addTo(map);
+    const currentUserPopup = new tt.Popup({ anchor: 'top' }).setText('Me')
+    currentUserMarker.setPopup(currentUserPopup).togglePopup();
+    getNannies();
+}
+
