@@ -32,7 +32,6 @@ ul {
 
 ul li {
     display: block;
-    text-align: right;
     font-size: 1rem;
     padding: 0.25rem 2rem;
 }
@@ -96,7 +95,7 @@ main>h2+p {
 }
 
 article {
-    /* 
+    /*
     display: block;
     max-width: 500px;
     margin: auto; */
