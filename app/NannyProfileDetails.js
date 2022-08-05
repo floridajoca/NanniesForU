@@ -45,14 +45,21 @@ function getNannyDetails() {
 function renderNannyDetails() {
   const nannyName = document.querySelector("#nanny-name");
   const nannyLocation = document.querySelector("#nanny-location");
-  const nannyDescription = document.querySelector("#nanny-description");
+  const nannyDescription = document.getElementById("nannyDescription");
   const nannyRate = document.querySelector("#nanny-rate");
   const Img = document.getElementById('nannyProfileImage');
   let calendar_days = NannyProfileDetails.schedule;
   Img.src = NannyProfileDetails.image;
   nannyName.innerHTML += NannyProfileDetails.full_name;
   nannyLocation.innerHTML += NannyProfileDetails.city;
-  nannyDescription.innerHTML += NannyProfileDetails.description ? NannyProfileDetails.description : "";
+  console.log();
+  if(typeof NannyProfileDetails.experience !== 'undefined'){
+    nannyDescription.innerHTML = NannyProfileDetails.experience.description;
+  }
+  else{
+    nannyDescription.innerHTML = "No details uploaded for this user";
+  }
+ 
   nannyRate.innerHTML += NannyProfileDetails.payrate;
 
   ratingHistory = false; //reset rating history flag on new profile load
