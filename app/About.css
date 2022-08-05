@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url("https://use.typekit.net/nio8yxa.css");
+
 html{
     line-height: 1.5;
 }
@@ -7,6 +10,7 @@ h1{
     background-color: rgb(124, 124, 124);
     color: white;
     padding: 2rem 1rem;
+
 }
 
 .site-logo img{
@@ -36,7 +40,9 @@ ul li a{
     text-decoration: none;
 }
 
-
+.about-section p{
+    font-size: 1.5rem;
+}
 .about-us-page header{
     display: flex;
     flex-flow: row wrap;
@@ -55,11 +61,22 @@ nav.header-menu {
     align-self: center;
 }
 
+main h2{
+    color: #104B9E;
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Fredoka One";
+}
+
+main{
+        font-family: new-atten;
+}
 
 /* ________________MAIN________________ */
 
 main h2{
     text-align: center;
+    
 }
 
 main> h2 + p{
@@ -122,7 +139,7 @@ article {
     .about-section{
         display: flex;
         flex-flow: row wrap;
-       
+        gap: 2rem;
         justify-content: space-between;
         
     }
