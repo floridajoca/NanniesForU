@@ -9,19 +9,19 @@ export function userTypeValidation() {
     menuItem2.innerHTML = '<a href="#about">About</a>';
     links.append(menuItem2);
     const menuItem3 = document.createElement("li");
-    menuItem3.innerHTML = '<a href="#help">How it works</a>';
+    menuItem3.innerHTML = '<a href="#help">How It Works</a>';
     links.append(menuItem3);
 
     if (sessionStorage.getItem('LoginId')) {
         if (sessionStorage.getItem('User_Type') == 'Parent') {
             console.log(sessionStorage.getItem('User_Type'), links);
             const menuItem4 = document.createElement("li");
-            menuItem4.innerHTML = '<a href="#nannyprofilelist">Nanny profile List</a>';
+            menuItem4.innerHTML = '<a href="#nannyprofilelist">Nannies Near You</a>';
             links.append(menuItem4);
         }
         else if (sessionStorage.getItem('User_Type') == 'Nanny') {
             const menuItem5 = document.createElement("li");
-            menuItem5.innerHTML = '<a href="#parentprofilelist">Parent Profile List</a>';
+            menuItem5.innerHTML = '<a href="#parentprofilelist">Jobs For You</a>';
             links.append(menuItem5);
         }
 

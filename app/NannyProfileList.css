@@ -116,6 +116,7 @@ ul.reviewsDisplay>* {
         max-width: 700px;
         gap: 1rem;
         justify-content: center;
+        padding: 2rem;
 
     }
 }
