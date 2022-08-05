@@ -9,7 +9,7 @@ export function userTypeValidation() {
     menuItem2.innerHTML = '<a href="#about">About</a>';
     links.append(menuItem2);
     const menuItem3 = document.createElement("li");
-    menuItem3.innerHTML = '<a href="#howItWorks">How it works</a>';
+    menuItem3.innerHTML = '<a href="#help">How it works</a>';
     links.append(menuItem3);
 
     if (sessionStorage.getItem('LoginId')) {

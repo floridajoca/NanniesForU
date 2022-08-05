@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url("https://use.typekit.net/nio8yxa.css");
 
-html{
+html {
     line-height: 1.5;
 }
 
-h1{
+h1 {
     text-align: center;
     background-color: rgb(124, 124, 124);
     color: white;
@@ -13,47 +13,51 @@ h1{
 
 }
 
-.site-logo img{
+.site-logo img {
     height: 140px;
     width: 140px;
     padding: 1rem;
 }
 
-img{
+img {
     width: 100%;
     height: auto;
 }
 
-ul{
+ul {
     list-style-type: none;
     padding: 0;
-    
+
 }
+
 ul li {
     display: block;
     text-align: right;
     font-size: 1rem;
     padding: 0.25rem 2rem;
 }
-ul li a{
-    
+
+ul li a {
+
     text-decoration: none;
 }
 
-.about-section p{
+.about-section p {
     font-size: 1.5rem;
+    align-self: center;
 }
-.about-us-page header{
+
+.about-us-page header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
 }
 
-.about-us-page header *{
+.about-us-page header * {
     flex: 1 0 40%;
 }
 
-.about-us-page header h1{
+.about-us-page header h1 {
     flex: 1 0 100%;
 }
 
@@ -61,25 +65,25 @@ nav.header-menu {
     align-self: center;
 }
 
-main h2{
+main h2 {
     color: #104B9E;
     font-size: 2rem;
     text-align: center;
     font-family: "Fredoka One";
 }
 
-main{
-        font-family: new-atten;
+main {
+    font-family: new-atten;
 }
 
 /* ________________MAIN________________ */
 
-main h2{
+main h2 {
     text-align: center;
-    
+
 }
 
-main> h2 + p{
+main>h2+p {
     text-align: center;
 }
 
@@ -92,14 +96,18 @@ main> h2 + p{
 }
 
 article {
-/* 
+    /* 
     display: block;
     max-width: 500px;
     margin: auto; */
-    
+
 }
 
-.team-article article{
+p {
+    margin: 0;
+}
+
+.team-article article {
     padding: 1rem;
     display: flex;
     flex-flow: column nowrap;
@@ -108,7 +116,7 @@ article {
     gap: 1rem;
 }
 
-.team-article img{
+.team-article img {
     margin: 1rem;
     width: 70%;
     border-radius: 15vh;
@@ -119,32 +127,41 @@ article {
     /* text-align: center; */
 }
 
+
+h4 {
+    margin-left: 2rem;
+}
+
 /* ______________END MAIN______________ */
 
-@media screen and (min-width: 700px ) {
-    
+@media screen and (min-width: 700px) {
+
     .team-article {
-        flex:0 0 22%;
+        flex: 0 0 22%;
     }
 
-    .team-article article *{
-        flex:1 0 100%;
+    .team-article article * {
+        flex: 1 0 100%;
     }
-    .about-section-wrapper{
+
+    .about-section-wrapper {
         display: block;
-        margin-left: auto;margin-right: auto;
+        margin-left: auto;
+        margin-right: auto;
         max-width: 1200px;
         padding: 1rem 3rem 1rem 3rem;
     }
-    .about-section{
+
+    .about-section {
         display: flex;
         flex-flow: row wrap;
         gap: 2rem;
         justify-content: space-between;
-        
+
     }
-    .about-section img{
-        
+
+    .about-section img {
+
         width: 442px;
         height: 403px;
         position: relative;
@@ -155,11 +172,13 @@ article {
         right: 4;
         border: 2px solid #FF1351;
     }
-    .img-container{
+
+    .img-container {
         flex: 1 0 30%;
-      
+
     }
-    .about-section p{
+
+    .about-section p {
         flex: 1 0 30%;
     }
 }

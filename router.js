@@ -15,7 +15,7 @@ class Router {
     static init(mainAreaId, pages) {
         Router.pages = pages;
         Router.rootElem = document.getElementById(mainAreaId);
-        window.addEventListener('hashchange', function(e) {
+        window.addEventListener('hashchange', function (e) {
             Router.handleHashChange();
         });
         Router.handleHashChange();
@@ -41,15 +41,20 @@ class Router {
             const txt = await response.text();
             Router.rootElem.innerHTML = txt;
 
-            const script = document.createElement("script");
-            script.setAttribute("src", page.jsName);
-            script.setAttribute('type', "module");
-            Router.rootElem.appendChild(script);
+            // const script = document.createElement("script");
+            // script.setAttribute("src", page.jsName);
+            // script.setAttribute('type', "module");
+            // Router.rootElem.appendChild(script);
 
             const style = document.createElement("link");
             style.setAttribute("rel", "stylesheet");
             style.setAttribute("href", page.cssName);
             Router.rootElem.appendChild(style);
+
+            const module = await import('./' + page.jsName);
+            if (module.init) {
+                module.init();
+            }
         } catch (err) {
             console.error(err);
         }
