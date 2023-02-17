@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6eb5795a-5149-4294-9caf-21d8d43117c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/ParentJobPost.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/ParentJobPost.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ParentJobPost.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/ParentJobPost.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ParentJobPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/ParentJobPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/About.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +34,6 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/Langara/Sem 2/4885 -  Integrated Project/NanniesForU/GitHub Repository/NanniesForU",
     "nodejs_package_manager_path": "npm",
@@ -52,6 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1658870290605</updated>
       <workItem from="1658870292614" duration="3180000" />
+      <workItem from="1676604916163" duration="735000" />
     </task>
     <servers />
   </component>
